@@ -7,11 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Serif+Thai:wght@300;400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════════
-   DESIGN DIRECTION: Japanese woodblock
-   + Thai folklore illustrated storybook
-   Deep ocean night, warm ink, handcrafted
-══════════════════════════════════════ */
 :root {
   --night:   #0c1118;
   --deep:    #111a26;
@@ -45,7 +40,6 @@ body {
   position: relative;
 }
 
-/* ══ PAPER TEXTURE OVERLAY ══ */
 body::before {
   content:'';
   position:fixed;inset:0;z-index:0;pointer-events:none;
@@ -55,7 +49,6 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* ══ STARS ══ */
 #starfield {
   position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
 }
@@ -69,7 +62,6 @@ body::before {
   to{opacity:.5;transform:scale(1.2);}
 }
 
-/* ══ WATER CAUSTICS (animated svg bg) ══ */
 .caustic-bg {
   position:fixed;bottom:0;left:0;width:100%;height:45%;
   z-index:0;pointer-events:none;
@@ -87,7 +79,6 @@ body::before {
 .caustic-wave:nth-child(3){height:60px;background:var(--pearl);animation-duration:15s;bottom:20px;opacity:.03;}
 @keyframes causticMove{0%{transform:translateX(0) rotate(0deg);}100%{transform:translateX(25%) rotate(5deg);}}
 
-/* ══ LAYOUT ══ */
 #app {
   position:relative;z-index:10;
   min-height:100vh;
@@ -96,7 +87,6 @@ body::before {
   padding:0 20px 120px;
 }
 
-/* ══ CHAPTER HEADER ══ */
 .chapter-mark {
   text-align:center;
   padding:44px 0 0;
@@ -118,13 +108,13 @@ body::before {
 }
 
 .chapter-eye {
-  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
   color:var(--gold);font-family:var(--f-body);font-weight:300;
   margin-bottom:14px;opacity:.8;
 }
 .chapter-title {
   font-family:var(--f-story);
-  font-size:clamp(38px,10vw,62px);
+  font-size:clamp(42px,10vw,62px);
   line-height:.95;letter-spacing:-1.5px;
   color:var(--pearl);
   margin-bottom:8px;
@@ -136,13 +126,12 @@ body::before {
 }
 .chapter-sub {
   font-family:var(--f-body);
-  font-style:italic;font-size:17px;
+  font-style:italic;font-size:18px;
   color:var(--foam);opacity:.65;
   line-height:1.6;
   margin-top:10px;
 }
 
-/* ══ DIVIDER ══ */
 .div-wrap {
   display:flex;align-items:center;gap:14px;
   margin:20px 0;
@@ -150,7 +139,6 @@ body::before {
 .div-line {flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.25),transparent);}
 .div-glyph {font-size:14px;color:var(--gold);opacity:.5;}
 
-/* ══ TICKER ══ */
 .ticker-bar {
   border:1px solid rgba(200,168,75,.2);
   border-radius:4px;
@@ -162,7 +150,7 @@ body::before {
   animation:fadeRise .9s .1s ease both;
 }
 .ticker-lbl {
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
   color:var(--gold);white-space:nowrap;opacity:.7;
   font-family:var(--f-body);
 }
@@ -177,24 +165,22 @@ body::before {
 @keyframes tickerMove{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 .tick-item {
   font-family:var(--f-body);font-style:italic;
-  font-size:13px;color:var(--foam);opacity:.7;
+  font-size:14px;color:var(--foam);opacity:.7;
   display:flex;align-items:center;gap:7px;
 }
 .tick-item strong{color:var(--amber);font-weight:400;font-style:normal;}
 
-/* ══ STORY PANEL ══ */
 .story-panel {
   animation:fadeRise .6s ease both;
 }
 
-/* Progress as a chapter indicator */
 .chapter-progress {
   display:flex;align-items:center;gap:10px;
   margin-bottom:28px;
 }
 .ch-num {
   font-family:var(--f-story);font-style:italic;
-  font-size:13px;color:var(--gold);opacity:.7;
+  font-size:14px;color:var(--gold);opacity:.7;
   white-space:nowrap;
 }
 .ch-dots {
@@ -208,7 +194,6 @@ body::before {
 .ch-dot.done{background:var(--gold);}
 .ch-dot.active{background:var(--amber);}
 
-/* Scene card */
 .scene-card {
   border:1px solid rgba(200,168,75,.15);
   border-radius:3px;
@@ -219,7 +204,6 @@ body::before {
   box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
-/* SVG Illustration area */
 .scene-illustration {
   width:100%;height:200px;
   position:relative;overflow:hidden;
@@ -230,10 +214,9 @@ body::before {
   position:absolute;inset:0;width:100%;height:100%;
 }
 
-/* Story text */
 .scene-body {padding:24px 24px 0;}
 .scene-eyebrow {
-  font-size:9px;letter-spacing:3.5px;text-transform:uppercase;
+  font-size:10px;letter-spacing:3.5px;text-transform:uppercase;
   color:var(--gold);margin-bottom:12px;font-family:var(--f-body);
   display:flex;align-items:center;gap:8px;
 }
@@ -241,7 +224,7 @@ body::before {
 
 .scene-text {
   font-family:var(--f-story);
-  font-size:clamp(17px,4.5vw,22px);
+  font-size:clamp(18px,4.5vw,23px);
   line-height:1.65;
   color:var(--pearl);
   letter-spacing:.2px;
@@ -252,11 +235,10 @@ body::before {
   color:var(--amber);
 }
 
-/* Response text (shows after choosing) */
 .response-text {
   font-family:var(--f-body);
   font-style:italic;
-  font-size:15px;line-height:1.8;
+  font-size:16px;line-height:1.8;
   color:var(--foam);opacity:.8;
   padding:16px 0 0;
   border-top:1px solid rgba(255,255,255,.07);
@@ -267,10 +249,20 @@ body::before {
 }
 .response-text.show{max-height:200px;opacity:1;}
 
-/* ══ OPTIONS ══ */
+/* Change hint label */
+.change-hint {
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--slate);margin-top:8px;margin-bottom:4px;
+  font-family:var(--f-body);
+  display:none;
+  text-align:center;
+  animation:fadeRise .3s ease;
+}
+.change-hint.show{display:block;}
+
 .options-wrap {padding:0 24px 24px;}
 .options-label {
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
   color:var(--slate);margin-bottom:12px;font-family:var(--f-body);
 }
 .options {display:flex;flex-direction:column;gap:8px;}
@@ -299,10 +291,12 @@ body::before {
   background:rgba(200,168,75,.06);
 }
 .opt.other-faded{opacity:.4;}
+/* When changeable, restore other options */
+.opt.other-faded.changeable{opacity:.6;cursor:pointer;}
 
 .opt-letter {
   font-family:var(--f-story);
-  font-style:italic;font-size:14px;
+  font-style:italic;font-size:15px;
   color:var(--gold);opacity:.7;
   flex-shrink:0;width:18px;
   margin-top:2px;
@@ -312,7 +306,7 @@ body::before {
 
 .opt-content{flex:1;}
 .opt-text {
-  font-size:15px;
+  font-size:16px;
   color:var(--foam);
   line-height:1.45;
   display:block;
@@ -321,7 +315,7 @@ body::before {
 .opt.selected .opt-text,.opt:hover .opt-text{color:var(--pearl);}
 
 .opt-trait {
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
   color:var(--slate);margin-top:4px;display:block;
   font-family:var(--f-body);
   transition:color .2s;
@@ -344,14 +338,13 @@ body::before {
   transform:rotate(45deg) translate(-1px,-1px);display:block;
 }
 
-/* ══ NEXT BTN ══ */
 .btn-next {
   margin:8px 24px 24px;
-  padding:15px 32px;
+  padding:16px 32px;
   background:var(--gold);
   border:none;border-radius:3px;
   font-family:var(--f-body);
-  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  font-size:13px;letter-spacing:3px;text-transform:uppercase;
   color:var(--night);font-weight:600;
   cursor:pointer;
   transition:all .22s ease;
@@ -363,7 +356,6 @@ body::before {
 .btn-next-arr{transition:transform .2s;}
 .btn-next:hover .btn-next-arr{transform:translateX(4px);}
 
-/* ══ LOADING ══ */
 .loading-scene {
   padding:80px 20px;
   text-align:center;
@@ -376,23 +368,21 @@ body::before {
 @keyframes loadFloat{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-12px) rotate(2deg);}}
 .loading-headline{
   font-family:var(--f-story);
-  font-size:26px;color:var(--pearl);
+  font-size:28px;color:var(--pearl);
   margin-bottom:8px;
 }
 .loading-sub{
   font-family:var(--f-body);font-style:italic;
-  font-size:16px;color:var(--foam);opacity:.55;
+  font-size:17px;color:var(--foam);opacity:.55;
   margin-bottom:32px;
 }
 .load-bar{width:100px;height:1px;background:rgba(255,255,255,.1);margin:0 auto 10px;position:relative;overflow:hidden;}
 .load-fill{height:100%;background:var(--gold);animation:loadBar 4s ease forwards;}
 @keyframes loadBar{0%{width:0;}70%{width:80%;}100%{width:93%};}
-.load-step{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--slate);min-height:14px;}
+.load-step{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--slate);min-height:14px;}
 
-/* ══ RESULT ══ */
 .result-scene{animation:fadeRise .7s ease;}
 
-/* Hero illustration */
 .result-hero {
   position:relative;
   margin:0 -20px;
@@ -412,7 +402,7 @@ body::before {
   text-align:center;padding:0 20px 36px;width:100%;
 }
 .res-eyebrow{
-  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
   color:var(--gold);margin-bottom:8px;font-family:var(--f-body);
 }
 .res-name{
@@ -425,11 +415,10 @@ body::before {
 .res-name em{display:block;font-style:italic;color:var(--amber);}
 .res-en{
   font-family:var(--f-body);font-style:italic;
-  font-size:13px;color:rgba(168,205,216,.5);
+  font-size:14px;color:rgba(168,205,216,.5);
   letter-spacing:1.5px;margin-top:6px;
 }
 
-/* Body */
 .result-body{padding:32px 20px 0;}
 
 .res-traits{
@@ -437,7 +426,7 @@ body::before {
   margin-bottom:24px;
 }
 .res-trait{
-  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--gold);
   border:1px solid rgba(200,168,75,.25);
   padding:4px 12px;
@@ -446,7 +435,7 @@ body::before {
 
 .res-story{
   font-family:var(--f-story);
-  font-size:17px;line-height:1.85;
+  font-size:18px;line-height:1.85;
   color:var(--foam);
   border-left:2px solid var(--gold);
   padding-left:18px;
@@ -454,13 +443,12 @@ body::before {
   font-style:italic;
 }
 
-/* Big Five bars */
 .bigfive-section{
   border:1px solid rgba(255,255,255,.07);
   padding:20px;margin-bottom:24px;
 }
 .bigfive-title{
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
   color:var(--gold);margin-bottom:16px;font-family:var(--f-body);
   display:flex;align-items:center;gap:10px;
 }
@@ -471,7 +459,7 @@ body::before {
 }
 .bf-row:last-child{margin-bottom:0;}
 .bf-label{
-  font-family:var(--f-body);font-size:12px;
+  font-family:var(--f-body);font-size:13px;
   color:var(--foam);opacity:.7;width:108px;flex-shrink:0;
   white-space:nowrap;
 }
@@ -484,10 +472,9 @@ body::before {
 }
 .bf-val{
   font-family:var(--f-story);font-style:italic;
-  font-size:12px;color:var(--gold);width:28px;text-align:right;flex-shrink:0;
+  font-size:13px;color:var(--gold);width:28px;text-align:right;flex-shrink:0;
 }
 
-/* AI box */
 .ai-prose{
   background:rgba(200,168,75,.05);
   border:1px solid rgba(200,168,75,.15);
@@ -503,18 +490,17 @@ body::before {
   line-height:1;
 }
 .ai-prose-label{
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
   color:var(--wave);margin-bottom:12px;font-family:var(--f-body);
   display:flex;align-items:center;gap:8px;
 }
 .ai-prose-label::after{content:'';flex:1;height:1px;background:rgba(91,143,168,.2);}
 .ai-prose-text{
   font-family:var(--f-story);font-style:italic;
-  font-size:16px;line-height:1.9;
+  font-size:17px;line-height:1.9;
   color:var(--foam);position:relative;z-index:1;
 }
 
-/* Stats */
 .res-stats{
   display:grid;grid-template-columns:repeat(3,1fr);
   border:1px solid rgba(255,255,255,.07);
@@ -529,16 +515,15 @@ body::before {
   font-family:var(--f-story);
   font-size:24px;color:var(--amber);display:block;margin-bottom:4px;
 }
-.rs-val.sm{font-size:14px;letter-spacing:.5px;}
-.rs-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);font-family:var(--f-body);}
+.rs-val.sm{font-size:15px;letter-spacing:.5px;}
+.rs-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);font-family:var(--f-body);}
 
-/* Share */
 .share-wrap{
   border-top:1px solid rgba(255,255,255,.07);
   padding-top:24px;
 }
 .share-hdl{
-  font-family:var(--f-story);font-size:18px;
+  font-family:var(--f-story);font-size:19px;
   color:var(--pearl);margin-bottom:14px;
   display:flex;align-items:center;gap:12px;
 }
@@ -547,19 +532,19 @@ body::before {
   width:100%;padding:15px;
   background:linear-gradient(135deg,var(--wave),var(--navy));
   border:none;border-radius:3px;
-  font-family:var(--f-body);font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  font-family:var(--f-body);font-size:13px;letter-spacing:3px;text-transform:uppercase;
   color:var(--pearl);cursor:pointer;
   transition:all .22s ease;
   margin-bottom:10px;
   display:flex;align-items:center;justify-content:center;gap:10px;
 }
 .btn-save:hover{background:linear-gradient(135deg,var(--foam),var(--wave));color:var(--night);}
-.share-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;}
+.share-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;}
 .btn-shr{
   padding:13px 8px;
   border:1px solid rgba(255,255,255,.1);
   background:none;border-radius:3px;
-  font-family:var(--f-body);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  font-family:var(--f-body);font-size:11px;letter-spacing:1px;text-transform:uppercase;
   color:var(--foam);cursor:pointer;
   transition:all .2s ease;
   display:flex;flex-direction:column;align-items:center;gap:5px;
@@ -569,13 +554,48 @@ body::before {
 .btn-retry{
   width:100%;padding:14px;
   background:none;border:1px solid rgba(255,255,255,.1);border-radius:3px;
-  font-family:var(--f-body);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  font-family:var(--f-body);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--slate);cursor:pointer;
   transition:all .2s;
 }
 .btn-retry:hover{border-color:rgba(255,255,255,.25);color:var(--foam);}
 
-/* ══ INTRO ══ */
+/* IG Story preview modal */
+.modal-overlay {
+  position:fixed;inset:0;z-index:9990;
+  background:rgba(0,0,0,.85);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  animation:fadeRise .3s ease;
+}
+.modal-box {
+  background:var(--deep);
+  border:1px solid rgba(200,168,75,.25);
+  border-radius:6px;
+  padding:28px 24px;
+  max-width:380px;width:100%;
+  text-align:center;
+}
+.modal-title{
+  font-family:var(--f-story);font-size:20px;
+  color:var(--pearl);margin-bottom:8px;
+}
+.modal-sub{
+  font-family:var(--f-body);font-style:italic;
+  font-size:15px;color:var(--foam);opacity:.6;
+  margin-bottom:20px;line-height:1.5;
+}
+.modal-btns{display:flex;flex-direction:column;gap:8px;}
+.modal-btn{
+  padding:14px;border-radius:3px;
+  font-family:var(--f-body);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;border:none;
+}
+.modal-btn.primary{background:var(--gold);color:var(--night);font-weight:600;}
+.modal-btn.primary:hover{background:var(--amber);}
+.modal-btn.secondary{background:none;border:1px solid rgba(255,255,255,.15);color:var(--foam);}
+.modal-btn.secondary:hover{border-color:rgba(255,255,255,.35);color:var(--pearl);}
+
 .intro-scene{animation:fadeRise .8s ease;}
 
 .intro-svgwrap{
@@ -586,7 +606,7 @@ body::before {
 .intro-svgwrap svg{width:100%;height:100%;}
 
 .intro-vol{
-  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
   color:var(--gold);text-align:center;margin-bottom:16px;
   font-family:var(--f-body);opacity:.7;
 }
@@ -600,7 +620,7 @@ body::before {
 
 .intro-kicker{
   font-family:var(--f-body);font-style:italic;
-  font-size:16px;color:var(--foam);opacity:.6;
+  font-size:17px;color:var(--foam);opacity:.6;
   text-align:center;line-height:1.65;
   margin-bottom:32px;
 }
@@ -617,18 +637,18 @@ body::before {
 }
 .if-icon{font-size:20px;margin-bottom:8px;display:block;}
 .if-title{
-  font-size:12px;font-weight:600;letter-spacing:.5px;
+  font-size:13px;font-weight:600;letter-spacing:.5px;
   color:var(--pearl);margin-bottom:4px;text-transform:uppercase;font-family:var(--f-body);
 }
 .if-desc{
   font-family:var(--f-body);font-style:italic;
-  font-size:13px;color:var(--slate);line-height:1.5;
+  font-size:14px;color:var(--slate);line-height:1.5;
 }
 
 .btn-enter{
   width:100%;padding:18px;
   background:var(--gold);border:none;border-radius:3px;
-  font-family:var(--f-body);font-size:13px;letter-spacing:4px;text-transform:uppercase;
+  font-family:var(--f-body);font-size:14px;letter-spacing:4px;text-transform:uppercase;
   color:var(--night);font-weight:600;cursor:pointer;
   transition:all .25s ease;
   display:flex;align-items:center;justify-content:center;gap:14px;
@@ -637,13 +657,12 @@ body::before {
 .btn-enter-arr{font-size:18px;transition:transform .2s;}
 .btn-enter:hover .btn-enter-arr{transform:translateX(5px);}
 
-/* ══ TOAST ══ */
 .toast{
   position:fixed;bottom:28px;left:50%;
   transform:translateX(-50%) translateY(6px);
   background:var(--gold);color:var(--night);
   padding:11px 24px;border-radius:3px;
-  font-family:var(--f-body);font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  font-family:var(--f-body);font-size:12px;letter-spacing:2px;text-transform:uppercase;
   font-weight:600;
   opacity:0;pointer-events:none;
   transition:all .3s ease;z-index:9999;
@@ -652,19 +671,165 @@ body::before {
 
 canvas{display:none;}
 
+/* ══ LANG TOGGLE ══ */
+.lang-toggle {
+  position:fixed;top:16px;right:16px;z-index:200;
+  display:flex;gap:0;border:1px solid rgba(200,168,75,.3);border-radius:3px;overflow:hidden;
+}
+.lang-btn {
+  padding:6px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  font-family:var(--f-body);cursor:pointer;border:none;
+  transition:all .2s;
+}
+.lang-btn.active{background:var(--gold);color:var(--night);font-weight:600;}
+.lang-btn:not(.active){background:rgba(255,255,255,.04);color:var(--slate);}
+.lang-btn:not(.active):hover{background:rgba(200,168,75,.1);color:var(--foam);}
+
+/* ══ SOUND TOGGLE ══ */
+.sound-toggle {
+  position:fixed;top:16px;right:110px;z-index:200;
+  width:36px;height:36px;border-radius:3px;
+  border:1px solid rgba(200,168,75,.3);
+  background:rgba(255,255,255,.04);
+  color:var(--slate);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;transition:all .2s;
+}
+.sound-toggle:hover,.sound-toggle.on{border-color:var(--gold);color:var(--amber);}
+
+/* ══ STREAK BADGE ══ */
+.streak-badge {
+  position:fixed;top:60px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--gold),var(--amber));
+  color:var(--night);
+  padding:8px 22px;border-radius:20px;
+  font-family:var(--f-body);font-size:12px;letter-spacing:2px;font-weight:700;
+  z-index:300;pointer-events:none;
+  opacity:0;
+  animation:streakPop .5s cubic-bezier(.34,1.56,.64,1) forwards,streakFade 2s 1.5s forwards;
+}
+@keyframes streakPop{0%{opacity:0;transform:translateX(-50%) scale(.6);}100%{opacity:1;transform:translateX(-50%) scale(1);}}
+@keyframes streakFade{to{opacity:0;transform:translateX(-50%) translateY(-10px);}}
+
+/* ══ INTRO FISH ANIMATION ══ */
+.fish-swim-layer {
+  position:absolute;inset:0;pointer-events:none;overflow:hidden;
+}
+.swim-fish {
+  position:absolute;
+  animation:fishSwim linear infinite;
+  opacity:0;
+}
+@keyframes fishSwim {
+  0%  { opacity:0; transform:translateX(0) scaleX(1); }
+  5%  { opacity:.7; }
+  48% { opacity:.5; transform:translateX(110vw) scaleX(1); }
+  50% { opacity:0; transform:translateX(110vw) scaleX(-1); }
+  55% { opacity:.5; }
+  95% { opacity:.5; transform:translateX(-10vw) scaleX(-1); }
+  100%{ opacity:0; transform:translateX(-10vw) scaleX(-1); }
+}
+
+/* ══ LORE BOX ══ */
+.lore-box {
+  border:1px solid rgba(200,168,75,.18);
+  border-left:3px solid var(--gold);
+  background:rgba(200,168,75,.04);
+  padding:14px 18px;
+  margin:0 24px 20px;
+  border-radius:0 3px 3px 0;
+  animation:fadeRise .5s .3s ease both;
+}
+.lore-eyebrow {
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:6px;font-family:var(--f-body);opacity:.7;
+}
+.lore-text {
+  font-family:var(--f-body);font-style:italic;
+  font-size:14px;color:var(--foam);line-height:1.65;opacity:.75;
+}
+
+/* ══ NEAR MISS BADGE ══ */
+.near-miss {
+  border:1px solid rgba(255,255,255,.08);
+  padding:14px 20px;margin-bottom:20px;
+  display:flex;align-items:center;gap:14px;
+}
+.nm-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--slate);font-family:var(--f-body);}
+.nm-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.nm-item{
+  font-size:12px;color:var(--foam);
+  border:1px solid rgba(255,255,255,.1);
+  padding:3px 10px;border-radius:2px;
+  font-family:var(--f-body);
+}
+.nm-item strong{color:var(--amber);}
+
+/* ══ COMPARE SECTION ══ */
+.compare-wrap {
+  border:1px solid rgba(200,168,75,.15);
+  padding:20px;margin-bottom:20px;
+  background:rgba(200,168,75,.03);
+}
+.compare-title{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;font-family:var(--f-body);
+  display:flex;align-items:center;gap:10px;
+}
+.compare-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07);}
+.compare-input-row{display:flex;gap:8px;margin-bottom:12px;}
+.compare-input{
+  flex:1;padding:11px 14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);border-radius:3px;
+  color:var(--pearl);font-family:var(--f-body);font-size:14px;
+  outline:none;
+}
+.compare-input:focus{border-color:rgba(200,168,75,.4);}
+.compare-input::placeholder{color:var(--slate);}
+.btn-compare{
+  padding:11px 18px;
+  background:var(--gold);border:none;border-radius:3px;
+  font-family:var(--f-body);font-size:11px;letter-spacing:2px;
+  color:var(--night);font-weight:600;cursor:pointer;
+  white-space:nowrap;transition:all .2s;
+}
+.btn-compare:hover{background:var(--amber);}
+.compare-link-box{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  padding:10px 14px;border-radius:3px;
+  font-size:12px;color:var(--slate);
+  word-break:break-all;margin-bottom:10px;
+  font-family:var(--f-body);
+}
+.compare-result{
+  padding:12px;border:1px solid rgba(200,168,75,.2);
+  background:rgba(200,168,75,.05);border-radius:3px;
+  font-family:var(--f-body);font-size:14px;color:var(--foam);
+  line-height:1.65;
+}
+
 @media(max-width:440px){
   .intro-features{grid-template-columns:1fr;}
   .res-stats{grid-template-columns:1fr;border:none;}
   .rs-col{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}
   .rs-col:last-child{border-bottom:none;}
+  .share-grid{grid-template-columns:1fr 1fr;}
+  .lang-toggle{top:12px;right:12px;}
+  .sound-toggle{top:12px;right:90px;}
 }
 </style>
 </head>
 <body>
 
-<!-- Stars -->
+<!-- Lang + Sound controls -->
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btnTH" onclick="setLang('th')">TH</button>
+  <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+</div>
+<button class="sound-toggle" id="soundBtn" onclick="toggleSound()" title="เสียง">🔇</button>
+
 <div id="starfield"></div>
-<!-- Water -->
 <div class="caustic-bg">
   <div class="caustic-wave"></div>
   <div class="caustic-wave"></div>
@@ -674,7 +839,6 @@ canvas{display:none;}
 <canvas id="cv"></canvas>
 
 <div id="app">
-  <!-- Masthead -->
   <div class="chapter-mark">
     <div class="chapter-ornament">
       <div class="orn-line"></div>
@@ -688,16 +852,14 @@ canvas{display:none;}
 
   <div class="div-wrap"><div class="div-line"></div><div class="div-glyph">✦</div><div class="div-line"></div></div>
 
-  <!-- Ticker -->
   <div class="ticker-bar">
     <span class="ticker-lbl">วันนี้</span>
     <div class="ticker-scroll"><div class="ticker-inner" id="tickInner"></div></div>
   </div>
 
-  <!-- Screen -->
   <div id="screen"></div>
 
-  <footer style="text-align:center;padding:32px 0 0;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);font-family:var(--f-body);">
+  <footer style="text-align:center;padding:32px 0 0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);font-family:var(--f-body);">
     Sea Soul · ชลบุรี · <span id="seasonFoot">—</span>
   </footer>
 </div>
@@ -705,21 +867,122 @@ canvas{display:none;}
 <div class="toast" id="toast"></div>
 
 <script>
-/* ══════════════════════════════════════
-   SEASON
-══════════════════════════════════════ */
+/* ══ LANGUAGE SYSTEM ══ */
+let LANG = 'th';
+const T = {
+  th: {
+    tagline:'นิทานแห่งท้องทะเลชลบุรี',
+    today:'วันนี้',
+    startBtn:'เริ่มออกเดินทาง',
+    you_are:'คุณคือ',
+    sea_creature:'สัตว์ทะเล',
+    what:'อะไร?',
+    journey_thru:'ออกเดินทางผ่าน',
+    chapters:'บทแห่งท้องทะเล',
+    discover:'แล้วค้นพบตัวตนของคุณผ่าน',
+    animals_note:'สัตว์ทะเล 13 ชนิด · เปลี่ยนใจได้ก่อนกด "บทต่อไป"',
+    ch_label:'บทที่',
+    you_will:'คุณจะ…',
+    selected_label:'คุณเลือก — เปลี่ยนใจได้ก่อนกดต่อไป',
+    change_hint:'✦ แตะตัวเลือกอื่นเพื่อเปลี่ยนใจได้',
+    next_ch:'บทต่อไป',
+    discover_self:'ค้นพบตัวตนของคุณ',
+    analyzing:'กำลังวิเคราะห์',
+    ai_loading:'AI กำลังสร้างโปรไฟล์บุคลิกของคุณ',
+    load_steps:['กำลังดำดิ่งลงสู่ก้นทะเล…','AI กำลังอ่านบุคลิกจากเส้นทางของคุณ…','ค้นหาสัตว์ทะเลที่ตรงกับจิตใจคุณที่สุด…','เขียนโปรไฟล์บุคลิกเฉพาะตัวคุณ…'],
+    big5:'Big Five Profile',
+    ai_label:'AI วิเคราะห์บุคลิก',
+    plays:'คนเล่นแล้ว',
+    rare_lbl:'ระดับ',
+    power_lbl:'พลังพิเศษ',
+    share_hdl:'แชร์ผลลัพธ์',
+    save_card:'📸 บันทึก Share Card · IG / TikTok',
+    ig_story:'IG Story',
+    x_share:'X / Twitter',
+    fb:'Facebook',
+    copy:'คัดลอก',
+    retry:'↺ เล่นอีกครั้ง',
+    near_miss_lbl:'ใกล้เคียงกับ',
+    compare_title:'เปรียบกับเพื่อน',
+    compare_ph:'วางลิงก์ผลเพื่อน',
+    compare_btn:'เปรียบ',
+    compare_mylink:'ลิงก์ผลของคุณ (ส่งให้เพื่อน)',
+    lore_label:'ตำนานท้องถิ่น',
+    sound_on:'🔊',sound_off:'🔇',
+    season_label:'ฤดูกาล',
+    feats:[
+      {icon:'🧬',title:'Big Five Psychology',desc:'คำถามอิงงานวิจัยบุคลิกภาพมาตรฐานโลก'},
+      {icon:'📖',title:'Narrative Quiz',desc:'คุณอยู่ในนิทานทะเลจริงๆ ทุกคำตอบมีเรื่องราวต่อ'},
+      {icon:'🤖',title:'AI วิเคราะห์',desc:'Claude AI สร้างโปรไฟล์บุคลิกเฉพาะตัวคุณ'},
+    ],
+  },
+  en: {
+    tagline:'Tales of the Chonburi Sea',
+    today:'Today',
+    startBtn:'Begin the Journey',
+    you_are:'You are a',
+    sea_creature:'Sea Creature',
+    what:'— which one?',
+    journey_thru:'Journey through',
+    chapters:'chapters of the sea',
+    discover:'and discover yourself through',
+    animals_note:'13 sea creatures · You can change your answer before hitting Next',
+    ch_label:'Chapter',
+    you_will:'You will…',
+    selected_label:'Selected — tap another to change your mind',
+    change_hint:'✦ Tap another option to change your answer',
+    next_ch:'Next Chapter',
+    discover_self:'Discover Your Soul',
+    analyzing:'Analyzing',
+    ai_loading:'AI is building your personality profile',
+    load_steps:['Diving to the ocean floor…','AI reading your personality path…','Finding your matching sea creature…','Writing your personal profile…'],
+    big5:'Big Five Profile',
+    ai_label:'AI Personality Analysis',
+    plays:'people played',
+    rare_lbl:'Rarity',
+    power_lbl:'Special Power',
+    share_hdl:'Share Result',
+    save_card:'📸 Save Share Card · IG / TikTok',
+    ig_story:'IG Story',
+    x_share:'X / Twitter',
+    fb:'Facebook',
+    copy:'Copy Link',
+    retry:'↺ Play Again',
+    near_miss_lbl:'Close match with',
+    compare_title:'Compare with a Friend',
+    compare_ph:'Paste friend\'s result link',
+    compare_btn:'Compare',
+    compare_mylink:'Your result link (send to friend)',
+    lore_label:'Local Legend',
+    sound_on:'🔊',sound_off:'🔇',
+    season_label:'Season',
+    feats:[
+      {icon:'🧬',title:'Big Five Psychology',desc:'Questions based on world-standard personality research'},
+      {icon:'📖',title:'Narrative Quiz',desc:'You\'re in a real sea tale — every answer continues the story'},
+      {icon:'🤖',title:'AI Analysis',desc:'Claude AI creates a unique personality profile just for you'},
+    ],
+  }
+};
+function t(k){ return T[LANG][k]||T.th[k]||k; }
+function setLang(l){
+  LANG=l;
+  document.getElementById('btnTH').classList.toggle('active',l==='th');
+  document.getElementById('btnEN').classList.toggle('active',l==='en');
+  document.querySelector('.chapter-sub').textContent = t('tagline');
+  render();
+}
+
+/* ══ SEASON ══ */
 const mo = new Date().getMonth()+1;
 const SZ = mo>=3&&mo<=5
-  ? {n:'ฤดูร้อน',e:'☀️',k:'hot',lbl:'HOT SEASON'}
+  ? {n:'ฤดูร้อน',ne:'Hot Season',e:'☀️',k:'hot',lbl:'HOT SEASON'}
   : mo>=6&&mo<=9
-  ? {n:'ฤดูฝน',e:'🌧️',k:'rainy',lbl:'RAINY SEASON'}
-  : {n:'ฤดูหนาว',e:'❄️',k:'cool',lbl:'COOL SEASON'};
+  ? {n:'ฤดูฝน',ne:'Rainy Season',e:'🌧️',k:'rainy',lbl:'RAINY SEASON'}
+  : {n:'ฤดูหนาว',ne:'Cool Season',e:'❄️',k:'cool',lbl:'COOL SEASON'};
 document.getElementById('chEye').textContent = `Sea Soul · ${SZ.e} ${SZ.n}`;
 document.getElementById('seasonFoot').textContent = SZ.lbl;
 
-/* ══════════════════════════════════════
-   STARS
-══════════════════════════════════════ */
+/* ══ STARS ══ */
 (()=>{
   const sf=document.getElementById('starfield');
   for(let i=0;i<80;i++){
@@ -730,21 +993,173 @@ document.getElementById('seasonFoot').textContent = SZ.lbl;
   }
 })();
 
-/* ══════════════════════════════════════
-   LEADERBOARD
-══════════════════════════════════════ */
-const LB={'🐬 โลมา·บางแสน':1247,'🦈 ฉลาม·เกาะสีชัง':893,'🐢 เต่า·เกาะล้าน':1056,'🦑 ปลาหมึก·ศรีราชา':734,'🦞 กุ้งมังกร·พัทยา':521,'🐋 วาฬ·อ่าวไทย':678};
+/* ══ SOUND SYSTEM (Web Audio API) ══ */
+let soundOn = false;
+let audioCtx = null;
+let ambientNode = null;
+
+function toggleSound(){
+  soundOn = !soundOn;
+  document.getElementById('soundBtn').textContent = soundOn ? t('sound_on') : t('sound_off');
+  document.getElementById('soundBtn').classList.toggle('on', soundOn);
+  if(soundOn) startAmbient();
+  else stopAmbient();
+}
+
+function getAudioCtx(){
+  if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  return audioCtx;
+}
+
+function startAmbient(){
+  try {
+    stopAmbient();
+    const ctx = getAudioCtx();
+    // Ocean wave: layered brown noise + gentle LFO
+    const bufLen = ctx.sampleRate * 4;
+    const buf = ctx.createBuffer(2, bufLen, ctx.sampleRate);
+    for(let c=0;c<2;c++){
+      const data = buf.getChannelData(c);
+      let last=0;
+      for(let i=0;i<bufLen;i++){
+        // Brown noise
+        last = (last + 0.02*(Math.random()*2-1))*0.99;
+        data[i] = last*3.5;
+      }
+    }
+    const src = ctx.createBufferSource();
+    src.buffer = buf; src.loop = true;
+
+    const lfo = ctx.createOscillator();
+    lfo.frequency.value = 0.12;
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.value = 0.18;
+    lfo.connect(lfoGain);
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass'; filter.frequency.value = 600;
+
+    const masterGain = ctx.createGain();
+    masterGain.gain.value = 0.13;
+    lfoGain.connect(masterGain.gain);
+
+    src.connect(filter);
+    filter.connect(masterGain);
+    masterGain.connect(ctx.destination);
+    lfo.start(); src.start();
+    ambientNode = {src, lfo, masterGain};
+  } catch(e){ console.log('Audio unavailable'); }
+}
+
+function stopAmbient(){
+  if(ambientNode){
+    try{ ambientNode.src.stop(); ambientNode.lfo.stop(); }catch(e){}
+    ambientNode = null;
+  }
+}
+
+// Play a quick scene sound effect
+function playSceneSound(scene){
+  if(!soundOn) return;
+  try{
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.connect(g); g.connect(ctx.destination);
+    if(scene==='scene_storm'){
+      // thunder rumble
+      osc.type='sawtooth'; osc.frequency.value=55;
+      g.gain.setValueAtTime(0,ctx.currentTime);
+      g.gain.linearRampToValueAtTime(0.08,ctx.currentTime+0.1);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.5);
+    } else if(scene==='scene_night'){
+      // soft chime
+      osc.type='sine'; osc.frequency.value=528;
+      g.gain.setValueAtTime(0.06,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.2);
+    } else if(scene==='scene_cave'){
+      // drip
+      osc.type='sine'; osc.frequency.value=340;
+      g.gain.setValueAtTime(0.05,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.8);
+    } else {
+      // gentle wave wash
+      osc.type='sine'; osc.frequency.value=180;
+      g.gain.setValueAtTime(0.04,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.6);
+    }
+    osc.start(); osc.stop(ctx.currentTime+2);
+  }catch(e){}
+}
+
+/* ══ LEADERBOARD — persistent storage ══ */
+const LB_KEY = 'seasoul_leaderboard_v2';
+let LB = {};
+
+async function loadLB(){
+  try {
+    const res = await window.storage.get(LB_KEY, true);
+    if(res && res.value) LB = JSON.parse(res.value);
+  } catch(e){ LB = {}; }
+  const defaults = {
+    '🐬 โลมา·บางแสน':0,'🦈 ฉลาม·เกาะสีชัง':0,'🐢 เต่า·เกาะล้าน':0,
+    '🦑 ปลาหมึก·ศรีราชา':0,'🦞 กุ้งมังกร·พัทยา':0,'🐋 วาฬ·อ่าวไทย':0,
+    '🐙 ปลาหมึกยักษ์·เกาะสีชัง':0,'🦀 ปู·บางแสน':0,'🐡 ปลาปักเป้า·เกาะล้าน':0,
+    '🦭 แมวน้ำ·พัทยา':0,'🐟 ปลาการ์ตูน·เกาะช้าง':0,'🦐 กุ้ง·ศรีราชา':0,'🐠 ปลาสิงโต·อ่าวไทย':0
+  };
+  Object.keys(defaults).forEach(k=>{ if(!(k in LB)) LB[k]=defaults[k]; });
+  buildTicker();
+}
+
+async function saveLB(){
+  try { await window.storage.set(LB_KEY, JSON.stringify(LB), true); } catch(e){}
+  buildTicker();
+}
+
 function buildTicker(){
   const el=document.getElementById('tickInner');
-  const html=Object.entries(LB).sort((a,b)=>b[1]-a[1])
-    .map(([k,v])=>`<span class="tick-item">${k} — <strong>${v.toLocaleString()} คน</strong></span><span style="color:var(--mist);opacity:.5">·</span>`).join('');
+  if(!el) return;
+  const sorted = Object.entries(LB).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
+  const show = sorted.length > 0 ? sorted : Object.entries(LB).slice(0,6).map(([k])=>[k,0]);
+  const html = show.map(([k,v])=>`<span class="tick-item">${k} — <strong>${v.toLocaleString()} ${LANG==='en'?'players':'คน'}</strong></span><span style="color:var(--mist);opacity:.5">·</span>`).join('');
   el.innerHTML=html+html;
 }
-buildTicker();
 
-/* ══════════════════════════════════════
-   SVG ILLUSTRATIONS (inline, no emoji)
-══════════════════════════════════════ */
+loadLB();
+
+/* ══ LORE — ตำนานท้องถิ่น ชลบุรี ══ */
+const LORE = {
+  scene_beach:{
+    th:`บางแสนมีเรื่องเล่าว่า คืนเดือนเพ็ญ จะมีแสงประกายจากทะเลบริเวณเสาธง — ชาวประมงเรียกว่า "ไฟทะเล" เชื่อว่าคือวิญญาณของผู้ล่วงลับที่ยังรักษาอ่าวอยู่`,
+    en:`Bang Saen fishermen speak of a "sea fire" on full moon nights near Sao Thong beach — said to be the spirits of ancestors still guarding the bay.`
+  },
+  scene_deep:{
+    th:`ชาวประมงเกาะล้านเล่าว่า ใต้โขดหินบริเวณหาดด้านเหนือมี "ถ้ำปลา" ที่ทุกสิ่งที่ตกลงไปจะไม่มีวันขึ้นมาอีก เว้นแต่ทะเลจะอนุญาต`,
+    en:`Koh Larn divers tell of a rock formation on the north side where lost objects are kept — "the sea decides when to return them," elders say.`
+  },
+  scene_storm:{
+    th:`พายุในอ่าวไทยฝั่งชลบุรีมักมาจาก "แม่โพสพแห่งทะเล" เมื่อทะเลโกรธ คลื่นจะร้องเป็นภาษาที่คนฟังรู้สึกได้แต่แปลไม่ออก`,
+    en:`Gulf storms near Chonburi are said to carry the voice of the sea spirit — heard but untranslatable, felt deep in the chest long after the storm passes.`
+  },
+  scene_cave:{
+    th:`เกาะสีชังมีถ้ำหินปูนที่ชาวบ้านเรียกว่า "ถ้ำสามพระ" มีรอยพระพุทธบาทบนผนัง ว่ากันว่าเรือที่แล่นผ่านในยามค่ำคืนมักได้ยินเสียงสวดมนต์ลอยมาจากฟากทะเล`,
+    en:`Koh Sichang has a limestone cave locals call "Three Buddhas Cave" — sailors passing at night sometimes hear what sounds like chanting drifting from the rocks.`
+  },
+  scene_coral:{
+    th:`อ่าวไทยฝั่งชลบุรีเคยมีป่าปะการังที่ชาวประมงเรียกว่า "สวนของพระแม่คงคา" เชื่อว่าการทำลายปะการังจะทำให้โชคด้านการประมงหายไปตลอดฤดูกาล`,
+    en:`Chonburi's coastal reef was once called "Goddess Khongkha's Garden." Fishermen believed harming the coral would bring an empty net season — a belief that still echoes today.`
+  },
+  scene_open:{
+    th:`กลางอ่าวไทยมีจุดที่ชาวเรือเรียกว่า "ศูนย์กลางแห่งน้ำ" — ที่ซึ่งทุกกระแสน้ำมาบรรจบกัน เชื่อกันว่าผู้ที่นั่งนิ่งๆ ตรงนั้นจะ "ได้ยิน" เสียงใจตัวเองชัดกว่าที่ใดบนโลก`,
+    en:`Sailors call a certain spot mid-gulf the "Center of Water" where currents converge. Those who sit quietly there, they say, can hear their own heart more clearly than anywhere else on earth.`
+  },
+  scene_night:{
+    th:`แพลงก์ตอนเรืองแสงของชลบุรีถูกบันทึกครั้งแรกโดยพระสงฆ์ในสมัยอยุธยา ว่า "ราตรีนั้นทะเลกลายเป็นท้องฟ้า และดาวทุกดวงก็เต้นระบำอยู่ใต้น้ำ"`,
+    en:`Chonburi's bioluminescence was first recorded by an Ayutthaya-era monk who wrote: "That night the sea became the sky, and every star danced beneath the water."`
+  },
+};
+
+/* ══ SVG ILLUSTRATIONS ══ */
 const SVG = {
   scene_beach:`<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -755,24 +1170,16 @@ const SVG = {
     <rect width="620" height="200" fill="url(#sky)"/>
     <ellipse cx="310" cy="48" rx="22" ry="22" fill="url(#moon)" opacity=".8"/>
     <ellipse cx="310" cy="48" rx="18" ry="18" fill="#f2ead8" opacity=".15"/>
-    <!-- stars -->
     <circle cx="80" cy="30" r="1" fill="#f2ead8" opacity=".6"/><circle cx="160" cy="20" r=".8" fill="#f2ead8" opacity=".5"/>
     <circle cx="420" cy="15" r="1.2" fill="#f2ead8" opacity=".7"/><circle cx="530" cy="35" r=".9" fill="#f2ead8" opacity=".4"/>
-    <circle cx="240" cy="60" r=".7" fill="#f2ead8" opacity=".5"/><circle cx="480" cy="55" r="1" fill="#f2ead8" opacity=".6"/>
-    <!-- sea -->
     <rect x="0" y="110" width="620" height="90" fill="url(#sea)"/>
-    <!-- waves -->
     <path d="M0,120 Q80,110 160,120 Q240,130 320,120 Q400,110 480,120 Q560,130 620,120" stroke="#5b8fa8" stroke-width="1" fill="none" opacity=".4"/>
     <path d="M0,130 Q70,122 140,130 Q210,138 280,130 Q350,122 420,130 Q490,138 560,130 Q600,126 620,130" stroke="#a8cdd8" stroke-width=".8" fill="none" opacity=".25"/>
-    <!-- moon reflection -->
     <ellipse cx="310" cy="145" rx="8" ry="28" fill="#c8a84b" opacity=".08"/>
-    <!-- shore -->
     <path d="M0,170 Q155,155 310,165 Q465,175 620,158 L620,200 L0,200 Z" fill="#192638"/>
-    <!-- palm silhouette -->
     <line x1="55" y1="200" x2="70" y2="100" stroke="#1e2d3d" stroke-width="4"/>
     <path d="M70,100 Q40,80 20,88" stroke="#1e2d3d" stroke-width="3" fill="none"/>
     <path d="M70,100 Q90,75 115,80" stroke="#1e2d3d" stroke-width="3" fill="none"/>
-    <path d="M70,108 Q55,92 35,98" stroke="#1e2d3d" stroke-width="2.5" fill="none"/>
   </svg>`,
 
   scene_deep:`<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
@@ -782,73 +1189,42 @@ const SVG = {
     </defs>
     <rect width="620" height="200" fill="url(#dsea)"/>
     <ellipse cx="310" cy="60" rx="200" ry="80" fill="url(#dl)"/>
-    <!-- bubbles -->
     <circle cx="180" cy="140" r="4" fill="none" stroke="#5b8fa8" stroke-width="1" opacity=".4"/>
     <circle cx="210" cy="110" r="2.5" fill="none" stroke="#a8cdd8" stroke-width=".8" opacity=".3"/>
     <circle cx="390" cy="130" r="3" fill="none" stroke="#5b8fa8" stroke-width="1" opacity=".35"/>
     <circle cx="430" cy="90" r="5" fill="none" stroke="#a8cdd8" stroke-width=".8" opacity=".2"/>
-    <circle cx="120" cy="80" r="2" fill="none" stroke="#5b8fa8" stroke-width=".8" opacity=".3"/>
-    <circle cx="510" cy="155" r="3.5" fill="none" stroke="#a8cdd8" stroke-width="1" opacity=".25"/>
-    <!-- seaweed -->
     <path d="M80,200 Q65,170 80,145 Q95,120 80,95" stroke="#4a7458" stroke-width="3" fill="none" opacity=".6"/>
     <path d="M550,200 Q535,165 550,140 Q565,115 548,85" stroke="#4a7458" stroke-width="2.5" fill="none" opacity=".5"/>
-    <path d="M100,200 Q115,175 100,155" stroke="#4a7458" stroke-width="2" fill="none" opacity=".4"/>
-    <!-- light rays -->
     <path d="M260,0 L240,200" stroke="#a8cdd8" stroke-width=".5" opacity=".06"/>
     <path d="M310,0 L290,200" stroke="#a8cdd8" stroke-width=".8" opacity=".08"/>
-    <path d="M370,0 L355,200" stroke="#a8cdd8" stroke-width=".5" opacity=".05"/>
-    <!-- coral silhouettes -->
-    <path d="M150,200 L150,175 Q140,160 155,150 Q170,140 160,125 Q175,115 165,100" stroke="#c87878" stroke-width="2" fill="none" opacity=".3"/>
-    <path d="M460,200 L460,180 Q450,165 468,155 Q482,145 472,132" stroke="#c87878" stroke-width="1.5" fill="none" opacity=".25"/>
   </svg>`,
 
   scene_storm:`<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="storm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a0f18"/><stop offset="50%" stop-color="#111e2e"/><stop offset="100%" stop-color="#1b3a52"/></linearGradient>
-    </defs>
+    <defs><linearGradient id="storm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a0f18"/><stop offset="50%" stop-color="#111e2e"/><stop offset="100%" stop-color="#1b3a52"/></linearGradient></defs>
     <rect width="620" height="200" fill="url(#storm)"/>
-    <!-- clouds -->
     <ellipse cx="200" cy="50" rx="120" ry="35" fill="#1e2d3d" opacity=".8"/>
     <ellipse cx="420" cy="40" rx="100" ry="28" fill="#192638" opacity=".9"/>
-    <ellipse cx="310" cy="30" rx="80" ry="20" fill="#111a26" opacity=".95"/>
-    <!-- lightning hint -->
     <path d="M290,30 L275,70 L285,70 L265,110" stroke="#f2ead8" stroke-width="1" fill="none" opacity=".25"/>
-    <!-- rough waves -->
     <path d="M0,140 Q50,125 100,140 Q150,155 200,135 Q250,115 300,138 Q350,158 400,132 Q450,108 500,135 Q560,158 620,130" stroke="#5b8fa8" stroke-width="2" fill="none" opacity=".5"/>
     <path d="M0,160 Q40,148 90,162 Q145,175 195,155 Q245,137 295,158 Q350,178 400,155 Q455,132 510,158 Q570,180 620,150 L620,200 L0,200Z" fill="#0e2233" opacity=".9"/>
-    <!-- rain lines -->
     <line x1="100" y1="0" x2="88" y2="80" stroke="#a8cdd8" stroke-width=".5" opacity=".15"/>
-    <line x1="200" y1="10" x2="188" y2="90" stroke="#a8cdd8" stroke-width=".5" opacity=".12"/>
     <line x1="300" y1="5" x2="288" y2="85" stroke="#a8cdd8" stroke-width=".5" opacity=".18"/>
-    <line x1="400" y1="0" x2="388" y2="80" stroke="#a8cdd8" stroke-width=".5" opacity=".13"/>
     <line x1="500" y1="8" x2="488" y2="88" stroke="#a8cdd8" stroke-width=".5" opacity=".15"/>
-    <line x1="150" y1="0" x2="138" y2="60" stroke="#a8cdd8" stroke-width=".4" opacity=".1"/>
-    <line x1="450" y1="5" x2="438" y2="65" stroke="#a8cdd8" stroke-width=".4" opacity=".1"/>
   </svg>`,
 
   scene_cave:`<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="cavelight" cx="50%" cy="60%" r="40%"><stop offset="0%" stop-color="#c8a84b" stop-opacity=".15"/><stop offset="100%" stop-color="#0c1118" stop-opacity="0"/></radialGradient>
-    </defs>
+    <defs><radialGradient id="cavelight" cx="50%" cy="60%" r="40%"><stop offset="0%" stop-color="#c8a84b" stop-opacity=".15"/><stop offset="100%" stop-color="#0c1118" stop-opacity="0"/></radialGradient></defs>
     <rect width="620" height="200" fill="#060c12"/>
-    <!-- cave walls -->
     <path d="M0,0 L0,200 Q80,160 80,80 Q80,20 150,0Z" fill="#0c1118"/>
     <path d="M620,0 L620,200 Q540,160 540,80 Q540,20 470,0Z" fill="#0c1118"/>
-    <!-- ceiling drips -->
     <path d="M200,0 Q195,30 200,45" stroke="#4a6274" stroke-width="1.5" fill="none" opacity=".5"/>
     <path d="M350,0 Q345,40 348,60" stroke="#4a6274" stroke-width="1.5" fill="none" opacity=".4"/>
-    <path d="M480,0 Q475,25 478,38" stroke="#4a6274" stroke-width="1" fill="none" opacity=".35"/>
-    <!-- pool -->
     <ellipse cx="310" cy="180" rx="200" ry="25" fill="#1b4f72" opacity=".3"/>
     <rect x="0" y="175" width="620" height="25" fill="#0e2233" opacity=".8"/>
-    <!-- glow from water -->
-    <ellipse cx="310" cy="175" rx="150" ry="15" fill="#1b4f72" opacity=".2"/>
     <rect width="620" height="200" fill="url(#cavelight)"/>
-    <!-- stalactites -->
     <path d="M120,0 L108,40 L132,40Z" fill="#111a26"/>
     <path d="M280,0 L270,55 L290,55Z" fill="#111a26"/>
     <path d="M420,0 L410,35 L430,35Z" fill="#111a26"/>
-    <path d="M560,0 L548,28 L572,28Z" fill="#111a26"/>
   </svg>`,
 
   scene_coral:`<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
@@ -858,22 +1234,12 @@ const SVG = {
     </defs>
     <rect width="620" height="200" fill="url(#coral_sea)"/>
     <rect width="620" height="200" fill="url(#sunglow)"/>
-    <!-- coral structures -->
     <path d="M60,200 L60,140 Q50,120 65,100 Q80,80 70,58" stroke="#c87878" stroke-width="4" fill="none"/>
     <path d="M60,140 Q42,125 35,115" stroke="#c87878" stroke-width="2.5" fill="none"/>
-    <path d="M60,115 Q75,100 85,92" stroke="#c87878" stroke-width="2" fill="none"/>
-    <path d="M200,200 L200,155 Q188,138 205,118 Q222,100 210,75" stroke="#d4604a" stroke-width="3.5" fill="none" opacity=".7"/>
-    <path d="M200,155 Q182,140 172,130" stroke="#d4604a" stroke-width="2" fill="none" opacity=".7"/>
     <path d="M420,200 L418,160 Q405,142 422,122 Q438,102 428,78" stroke="#c87878" stroke-width="3" fill="none" opacity=".6"/>
-    <path d="M550,200 L552,145 Q540,128 558,108" stroke="#d4604a" stroke-width="2.5" fill="none" opacity=".5"/>
-    <!-- sea fan -->
     <path d="M320,200 L320,80" stroke="#4a6274" stroke-width="2" fill="none" opacity=".5"/>
     <ellipse cx="320" cy="80" rx="60" ry="50" fill="none" stroke="#4a6274" stroke-width=".8" opacity=".2"/>
-    <ellipse cx="320" cy="80" rx="40" ry="35" fill="none" stroke="#4a6274" stroke-width=".6" opacity=".15"/>
-    <!-- fish silhouettes -->
     <path d="M450,90 Q460,85 468,90 Q460,95 450,90Z M468,90 L475,86 L475,94Z" fill="#a8cdd8" opacity=".4"/>
-    <path d="M160,70 Q168,66 174,70 Q168,74 160,70Z M174,70 L180,67 L180,73Z" fill="#a8cdd8" opacity=".35"/>
-    <!-- sand -->
     <path d="M0,185 Q155,175 310,180 Q465,185 620,172 L620,200 L0,200Z" fill="#192638"/>
   </svg>`,
 
@@ -884,345 +1250,102 @@ const SVG = {
     </defs>
     <rect width="620" height="200" fill="url(#horizon)"/>
     <rect width="620" height="200" fill="url(#sunpath)"/>
-    <!-- horizon sun glow -->
     <ellipse cx="310" cy="92" rx="60" ry="8" fill="#c8a84b" opacity=".1"/>
-    <ellipse cx="310" cy="92" rx="20" ry="3" fill="#f2ead8" opacity=".2"/>
-    <!-- sea surface -->
     <path d="M0,95 Q80,88 160,95 Q240,102 320,94 Q400,86 480,95 Q560,104 620,92" stroke="#a8cdd8" stroke-width=".8" fill="none" opacity=".3"/>
-    <!-- waves -->
     <path d="M0,105 Q60,98 120,105 Q180,112 240,104 Q300,97 360,105 Q420,113 480,104 Q540,96 620,106 L620,200 L0,200Z" fill="#0e2a44" opacity=".95"/>
-    <!-- wave highlights -->
-    <path d="M50,108 Q80,103 110,108" stroke="#a8cdd8" stroke-width=".8" fill="none" opacity=".3"/>
-    <path d="M260,102 Q290,97 320,102" stroke="#a8cdd8" stroke-width=".8" fill="none" opacity=".25"/>
-    <path d="M470,107 Q500,102 530,107" stroke="#a8cdd8" stroke-width=".8" fill="none" opacity=".3"/>
-    <!-- moon reflection path -->
-    <path d="M310,92 L290,200 M310,92 L330,200" stroke="#c8a84b" stroke-width=".5" opacity=".06"/>
-    <!-- distant island silhouette -->
     <path d="M480,92 Q510,80 540,92 Q570,84 590,92" fill="#0a1520" opacity=".6"/>
-    <!-- seabird -->
     <path d="M130,55 Q138,50 142,55 Q138,52 134,55Z" stroke="#a8cdd8" stroke-width="1" fill="none" opacity=".4"/>
-    <path d="M200,40 Q207,36 210,40 Q207,38 204,40Z" stroke="#a8cdd8" stroke-width=".8" fill="none" opacity=".3"/>
   </svg>`,
 
   scene_night:`<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="milkyway" cx="40%" cy="30%" r="60%"><stop offset="0%" stop-color="#a8cdd8" stop-opacity=".06"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-    </defs>
+    <defs><radialGradient id="milkyway" cx="40%" cy="30%" r="60%"><stop offset="0%" stop-color="#a8cdd8" stop-opacity=".06"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
     <rect width="620" height="200" fill="#070c14"/>
     <rect width="620" height="200" fill="url(#milkyway)"/>
-    <!-- many stars -->
     <circle cx="50" cy="20" r="1.2" fill="#f2ead8" opacity=".7"/>
-    <circle cx="130" cy="45" r=".8" fill="#f2ead8" opacity=".5"/>
     <circle cx="220" cy="15" r="1" fill="#f2ead8" opacity=".8"/>
     <circle cx="300" cy="35" r="1.5" fill="#c8a84b" opacity=".6"/>
-    <circle cx="380" cy="18" r=".9" fill="#f2ead8" opacity=".6"/>
     <circle cx="460" cy="40" r="1.1" fill="#f2ead8" opacity=".7"/>
     <circle cx="550" cy="22" r=".8" fill="#f2ead8" opacity=".5"/>
-    <circle cx="90" cy="65" r=".7" fill="#f2ead8" opacity=".4"/>
-    <circle cx="175" cy="55" r="1" fill="#a8cdd8" opacity=".5"/>
-    <circle cx="410" cy="58" r=".8" fill="#f2ead8" opacity=".45"/>
-    <circle cx="500" cy="70" r="1.2" fill="#f2ead8" opacity=".6"/>
-    <!-- milky way band -->
-    <path d="M0,80 Q200,60 400,75 Q500,80 620,65" stroke="#a8cdd8" stroke-width="15" fill="none" opacity=".02"/>
-    <!-- bioluminescent sea -->
     <rect x="0" y="130" width="620" height="70" fill="#060c14"/>
     <path d="M0,132 Q80,125 160,133 Q240,141 320,130 Q400,119 480,132 Q560,145 620,128 L620,200 L0,200Z" fill="#071218" opacity=".98"/>
-    <!-- bio glow dots -->
     <circle cx="100" cy="155" r="2" fill="#38b2ac" opacity=".5"/>
-    <circle cx="200" cy="165" r="1.5" fill="#38b2ac" opacity=".4"/>
     <circle cx="340" cy="148" r="2.5" fill="#5b8fa8" opacity=".4"/>
     <circle cx="430" cy="170" r="1.8" fill="#38b2ac" opacity=".5"/>
-    <circle cx="520" cy="158" r="2" fill="#38b2ac" opacity=".35"/>
-    <circle cx="150" cy="180" r="1" fill="#5b8fa8" opacity=".4"/>
-    <circle cx="470" cy="185" r="1.5" fill="#38b2ac" opacity=".3"/>
-    <!-- moon crescent -->
     <path d="M555,25 A18,18 0 1 1 555,61 A12,12 0 1 0 555,25Z" fill="#f2ead8" opacity=".7"/>
   </svg>`,
 
-  /* Animal illustrations for result */
-  dolphin:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="dg" cx="40%" cy="35%" r="55%"><stop offset="0%" stop-color="#5b8fa8"/><stop offset="100%" stop-color="#1b4f72"/></radialGradient>
-      <radialGradient id="dg2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a8cdd8" stop-opacity=".3"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-    </defs>
-    <ellipse cx="200" cy="200" rx="180" ry="140" fill="url(#dg2)"/>
-    <!-- body -->
-    <path d="M80,200 Q100,150 180,145 Q260,140 320,175 Q360,195 340,230 Q290,270 200,265 Q120,260 80,200Z" fill="url(#dg)"/>
-    <!-- belly -->
-    <path d="M100,210 Q130,235 200,240 Q270,245 310,220 Q280,255 200,255 Q130,255 100,210Z" fill="#ddeaee" opacity=".35"/>
-    <!-- dorsal fin -->
-    <path d="M210,145 Q215,100 235,90 Q245,120 230,145Z" fill="#1b4f72"/>
-    <!-- tail -->
-    <path d="M80,200 Q50,185 30,160 Q25,195 50,215 Q60,220 80,200Z" fill="#1b4f72"/>
-    <path d="M80,200 Q55,215 35,235 Q55,245 72,225 Q76,215 80,200Z" fill="#2a5f84"/>
-    <!-- pectoral fin -->
-    <path d="M185,200 Q165,225 155,245 Q175,235 200,210Z" fill="#1b4f72" opacity=".7"/>
-    <!-- eye -->
-    <circle cx="290" cy="175" r="8" fill="#0c1118"/>
-    <circle cx="293" cy="172" r="3" fill="#f2ead8" opacity=".7"/>
-    <!-- beak -->
-    <path d="M320,175 Q360,168 380,172 Q360,178 320,180Z" fill="#5b8fa8"/>
-    <!-- smile -->
-    <path d="M335,178 Q350,185 365,180" stroke="#1b4f72" stroke-width="1.5" fill="none"/>
-    <!-- water drops -->
-    <ellipse cx="360" cy="155" rx="3" ry="5" fill="#a8cdd8" opacity=".5" transform="rotate(-20,360,155)"/>
-    <ellipse cx="375" cy="145" rx="2" ry="4" fill="#a8cdd8" opacity=".35" transform="rotate(-30,375,145)"/>
-    <!-- shine -->
-    <path d="M200,155 Q220,148 235,158" stroke="#ddeaee" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
-  </svg>`,
+  /* ══ ANIMAL ILLUSTRATIONS ══ */
+  dolphin:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="dg" cx="40%" cy="35%" r="55%"><stop offset="0%" stop-color="#5b8fa8"/><stop offset="100%" stop-color="#1b4f72"/></radialGradient></defs><ellipse cx="200" cy="200" rx="180" ry="140" fill="#5b8fa8" opacity=".08"/><path d="M80,200 Q100,150 180,145 Q260,140 320,175 Q360,195 340,230 Q290,270 200,265 Q120,260 80,200Z" fill="url(#dg)"/><path d="M100,210 Q130,235 200,240 Q270,245 310,220 Q280,255 200,255 Q130,255 100,210Z" fill="#ddeaee" opacity=".35"/><path d="M210,145 Q215,100 235,90 Q245,120 230,145Z" fill="#1b4f72"/><path d="M80,200 Q50,185 30,160 Q25,195 50,215 Q60,220 80,200Z" fill="#1b4f72"/><path d="M80,200 Q55,215 35,235 Q55,245 72,225 Q76,215 80,200Z" fill="#2a5f84"/><path d="M185,200 Q165,225 155,245 Q175,235 200,210Z" fill="#1b4f72" opacity=".7"/><circle cx="290" cy="175" r="8" fill="#0c1118"/><circle cx="293" cy="172" r="3" fill="#f2ead8" opacity=".7"/><path d="M320,175 Q360,168 380,172 Q360,178 320,180Z" fill="#5b8fa8"/><path d="M335,178 Q350,185 365,180" stroke="#1b4f72" stroke-width="1.5" fill="none"/><path d="M200,155 Q220,148 235,158" stroke="#ddeaee" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/></svg>`,
 
-  shark:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a3d52"/><stop offset="100%" stop-color="#4a6274"/></linearGradient>
-    </defs>
-    <ellipse cx="200" cy="200" rx="175" ry="130" fill="#1b4f72" opacity=".1"/>
-    <!-- body -->
-    <path d="M60,200 Q90,155 200,148 Q310,142 360,185 Q380,205 355,235 Q300,272 195,270 Q105,268 60,200Z" fill="url(#sg)"/>
-    <!-- belly white -->
-    <path d="M90,215 Q140,248 200,252 Q265,256 315,230 Q280,268 200,265 Q125,262 90,215Z" fill="#ddeaee" opacity=".25"/>
-    <!-- dorsal fin tall -->
-    <path d="M200,148 Q205,80 228,60 Q240,100 235,148Z" fill="#2a3d52"/>
-    <!-- caudal fin -->
-    <path d="M60,200 Q28,178 12,148 Q18,190 22,210 Q16,230 12,252 Q30,240 50,218 Q56,210 60,200Z" fill="#2a3d52"/>
-    <!-- pectoral fin -->
-    <path d="M200,210 Q170,240 150,262 Q178,248 210,220Z" fill="#2a3d52" opacity=".7"/>
-    <path d="M240,215 Q270,240 285,258 Q265,242 242,222Z" fill="#2a3d52" opacity=".5"/>
-    <!-- gill slits -->
-    <path d="M270,172 Q268,188 270,200" stroke="#1e2d3d" stroke-width="1.5" fill="none" opacity=".5"/>
-    <path d="M258,170 Q256,186 258,198" stroke="#1e2d3d" stroke-width="1.5" fill="none" opacity=".4"/>
-    <path d="M246,170 Q244,184 246,196" stroke="#1e2d3d" stroke-width="1.5" fill="none" opacity=".35"/>
-    <!-- eye -->
-    <circle cx="315" cy="178" r="9" fill="#0c1118"/>
-    <circle cx="318" cy="175" r="3" fill="#f2ead8" opacity=".5"/>
-    <ellipse cx="315" cy="178" rx="9" ry="9" fill="none" stroke="#4a6274" stroke-width="1" opacity=".5"/>
-    <!-- snout -->
-    <path d="M355,185 Q388,180 400,188 Q390,196 355,198Z" fill="#3a5068"/>
-    <!-- teeth hint -->
-    <path d="M370,188 L373,196 M378,187 L380,195 M362,189 L364,197" stroke="#ddeaee" stroke-width="1.2" opacity=".3"/>
-    <!-- shine -->
-    <path d="M180,160 Q210,152 235,162" stroke="#a8cdd8" stroke-width="2.5" fill="none" opacity=".3" stroke-linecap="round"/>
-  </svg>`,
+  shark:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a3d52"/><stop offset="100%" stop-color="#4a6274"/></linearGradient></defs><path d="M60,200 Q90,155 200,148 Q310,142 360,185 Q380,205 355,235 Q300,272 195,270 Q105,268 60,200Z" fill="url(#sg)"/><path d="M90,215 Q140,248 200,252 Q265,256 315,230 Q280,268 200,265 Q125,262 90,215Z" fill="#ddeaee" opacity=".25"/><path d="M200,148 Q205,80 228,60 Q240,100 235,148Z" fill="#2a3d52"/><path d="M60,200 Q28,178 12,148 Q18,190 22,210 Q16,230 12,252 Q30,240 50,218 Q56,210 60,200Z" fill="#2a3d52"/><path d="M200,210 Q170,240 150,262 Q178,248 210,220Z" fill="#2a3d52" opacity=".7"/><path d="M270,172 Q268,188 270,200" stroke="#1e2d3d" stroke-width="1.5" fill="none" opacity=".5"/><path d="M258,170 Q256,186 258,198" stroke="#1e2d3d" stroke-width="1.5" fill="none" opacity=".4"/><circle cx="315" cy="178" r="9" fill="#0c1118"/><circle cx="318" cy="175" r="3" fill="#f2ead8" opacity=".5"/><path d="M355,185 Q388,180 400,188 Q390,196 355,198Z" fill="#3a5068"/><path d="M180,160 Q210,152 235,162" stroke="#a8cdd8" stroke-width="2.5" fill="none" opacity=".3" stroke-linecap="round"/></svg>`,
 
-  squid:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="sqg" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#7a5a9a"/><stop offset="100%" stop-color="#3d1f5c"/></radialGradient>
-      <radialGradient id="sqg2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a878c8" stop-opacity=".15"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-    </defs>
-    <ellipse cx="200" cy="185" rx="170" ry="145" fill="url(#sqg2)"/>
-    <!-- mantle (main body) -->
-    <path d="M155,100 Q200,70 245,100 Q268,130 262,190 Q248,235 200,248 Q152,235 138,190 Q132,130 155,100Z" fill="url(#sqg)"/>
-    <!-- mantle fins -->
-    <path d="M155,100 Q120,90 105,115 Q112,145 138,160Z" fill="#5a3a7a" opacity=".8"/>
-    <path d="M245,100 Q280,90 295,115 Q288,145 262,160Z" fill="#5a3a7a" opacity=".8"/>
-    <!-- tentacles (8) -->
-    <path d="M165,240 Q150,275 140,310 Q155,295 160,270 Q168,255 172,242Z" fill="#5a3a7a"/>
-    <path d="M180,248 Q175,288 170,320 Q182,302 185,278 Q188,260 185,250Z" fill="#6a4a8a"/>
-    <path d="M200,252 Q200,295 198,330 Q208,312 210,288 Q212,265 208,254Z" fill="#5a3a7a"/>
-    <path d="M220,250 Q228,290 230,322 Q218,306 216,282 Q214,262 218,252Z" fill="#6a4a8a"/>
-    <path d="M235,244 Q248,278 255,310 Q242,298 238,272 Q232,256 232,245Z" fill="#5a3a7a"/>
-    <!-- feeding tentacles longer -->
-    <path d="M188,248 Q170,300 158,350 Q175,325 180,295 Q188,268 192,250Z" fill="#4a2a6a" opacity=".85"/>
-    <path d="M212,250 Q230,302 242,352 Q226,326 220,296 Q214,268 210,252Z" fill="#4a2a6a" opacity=".85"/>
-    <!-- sucker dots on tentacles -->
-    <circle cx="155" cy="280" r="2" fill="#c8a8e8" opacity=".4"/>
-    <circle cx="172" cy="300" r="1.5" fill="#c8a8e8" opacity=".35"/>
-    <circle cx="246" cy="282" r="2" fill="#c8a8e8" opacity=".4"/>
-    <!-- eyes (large, alien) -->
-    <ellipse cx="175" cy="158" rx="14" ry="16" fill="#1e0a2e"/>
-    <ellipse cx="175" cy="158" rx="10" ry="12" fill="#3a1a52"/>
-    <circle cx="175" cy="155" r="4" fill="#f2ead8" opacity=".7"/>
-    <ellipse cx="225" cy="158" rx="14" ry="16" fill="#1e0a2e"/>
-    <ellipse cx="225" cy="158" rx="10" ry="12" fill="#3a1a52"/>
-    <circle cx="225" cy="155" r="4" fill="#f2ead8" opacity=".7"/>
-    <!-- chromatophores (color spots) -->
-    <circle cx="185" cy="130" r="3" fill="#c87878" opacity=".4"/>
-    <circle cx="215" cy="125" r="2.5" fill="#c8a84b" opacity=".4"/>
-    <circle cx="200" cy="200" r="3" fill="#c87878" opacity=".3"/>
-    <circle cx="170" cy="185" r="2" fill="#c8a84b" opacity=".35"/>
-    <circle cx="230" cy="190" r="2.5" fill="#78c8a8" opacity=".3"/>
-    <!-- shine -->
-    <path d="M178,108 Q200,98 220,108" stroke="#d4b8f0" stroke-width="2" fill="none" opacity=".35" stroke-linecap="round"/>
-  </svg>`,
+  squid:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="sqg" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#7a5a9a"/><stop offset="100%" stop-color="#3d1f5c"/></radialGradient></defs><path d="M155,100 Q200,70 245,100 Q268,130 262,190 Q248,235 200,248 Q152,235 138,190 Q132,130 155,100Z" fill="url(#sqg)"/><path d="M155,100 Q120,90 105,115 Q112,145 138,160Z" fill="#5a3a7a" opacity=".8"/><path d="M245,100 Q280,90 295,115 Q288,145 262,160Z" fill="#5a3a7a" opacity=".8"/><path d="M165,240 Q150,275 140,310 Q155,295 160,270 Q168,255 172,242Z" fill="#5a3a7a"/><path d="M180,248 Q175,288 170,320 Q182,302 185,278 Q188,260 185,250Z" fill="#6a4a8a"/><path d="M200,252 Q200,295 198,330 Q208,312 210,288 Q212,265 208,254Z" fill="#5a3a7a"/><path d="M220,250 Q228,290 230,322 Q218,306 216,282 Q214,262 218,252Z" fill="#6a4a8a"/><path d="M235,244 Q248,278 255,310 Q242,298 238,272 Q232,256 232,245Z" fill="#5a3a7a"/><ellipse cx="175" cy="158" rx="14" ry="16" fill="#1e0a2e"/><circle cx="175" cy="155" r="4" fill="#f2ead8" opacity=".7"/><ellipse cx="225" cy="158" rx="14" ry="16" fill="#1e0a2e"/><circle cx="225" cy="155" r="4" fill="#f2ead8" opacity=".7"/><circle cx="185" cy="130" r="3" fill="#c87878" opacity=".4"/><circle cx="215" cy="125" r="2.5" fill="#c8a84b" opacity=".4"/></svg>`,
 
-  turtle:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="tg" cx="50%" cy="45%" r="50%"><stop offset="0%" stop-color="#5a8a4a"/><stop offset="100%" stop-color="#2a4a28"/></radialGradient>
-      <radialGradient id="shell" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#4a7a3a"/><stop offset="100%" stop-color="#1a3a18"/></radialGradient>
-    </defs>
-    <!-- shell shadow -->
-    <ellipse cx="200" cy="215" rx="125" ry="20" fill="#0c1118" opacity=".25"/>
-    <!-- flippers -->
-    <path d="M108,185 Q70,165 45,175 Q55,200 85,205 Q100,205 108,195Z" fill="url(#tg)"/>
-    <path d="M108,220 Q72,238 50,250 Q68,268 95,258 Q108,248 112,232Z" fill="url(#tg)"/>
-    <path d="M292,185 Q330,165 355,175 Q345,200 315,205 Q300,205 292,195Z" fill="url(#tg)"/>
-    <path d="M292,220 Q328,238 350,250 Q332,268 305,258 Q292,248 288,232Z" fill="url(#tg)"/>
-    <!-- shell base -->
-    <ellipse cx="200" cy="200" rx="115" ry="95" fill="url(#shell)"/>
-    <!-- shell pattern (scutes) -->
-    <ellipse cx="200" cy="195" rx="55" ry="48" fill="none" stroke="#6a9a5a" stroke-width="2" opacity=".5"/>
-    <!-- central scute lines -->
-    <path d="M200,148 L200,242" stroke="#6a9a5a" stroke-width="1.5" fill="none" opacity=".35"/>
-    <path d="M148,195 L252,195" stroke="#6a9a5a" stroke-width="1.5" fill="none" opacity=".35"/>
-    <path d="M160,162 L240,228" stroke="#6a9a5a" stroke-width="1" fill="none" opacity=".25"/>
-    <path d="M240,162 L160,228" stroke="#6a9a5a" stroke-width="1" fill="none" opacity=".25"/>
-    <!-- scute borders -->
-    <path d="M200,148 Q250,158 252,195 Q248,238 200,242 Q152,238 148,195 Q150,158 200,148Z" fill="none" stroke="#8ab878" stroke-width="1.5" opacity=".3"/>
-    <!-- outer scutes hint -->
-    <path d="M252,162 Q285,178 288,210 Q282,242 260,258" stroke="#6a9a5a" stroke-width="1" fill="none" opacity=".2"/>
-    <path d="M148,162 Q115,178 112,210 Q118,242 140,258" stroke="#6a9a5a" stroke-width="1" fill="none" opacity=".2"/>
-    <!-- shell shine -->
-    <ellipse cx="180" cy="172" rx="30" ry="20" fill="#8ab878" opacity=".12" transform="rotate(-20,180,172)"/>
-    <!-- head -->
-    <ellipse cx="200" cy="125" rx="28" ry="24" fill="#4a7a3a"/>
-    <!-- eye -->
-    <circle cx="212" cy="118" r="6" fill="#1a2810"/>
-    <circle cx="214" cy="116" r="2.5" fill="#f2ead8" opacity=".6"/>
-    <circle cx="188" cy="118" r="6" fill="#1a2810"/>
-    <circle cx="190" cy="116" r="2.5" fill="#f2ead8" opacity=".6"/>
-    <!-- beak -->
-    <path d="M193,130 Q200,137 207,130 L200,140Z" fill="#3a5a2a"/>
-    <!-- neck -->
-    <path d="M178,148 Q200,135 222,148 Q215,155 200,158 Q185,155 178,148Z" fill="#4a7a3a"/>
-  </svg>`,
+  turtle:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="tg" cx="50%" cy="45%" r="50%"><stop offset="0%" stop-color="#5a8a4a"/><stop offset="100%" stop-color="#2a4a28"/></radialGradient><radialGradient id="shell" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#4a7a3a"/><stop offset="100%" stop-color="#1a3a18"/></radialGradient></defs><path d="M108,185 Q70,165 45,175 Q55,200 85,205 Q100,205 108,195Z" fill="url(#tg)"/><path d="M108,220 Q72,238 50,250 Q68,268 95,258 Q108,248 112,232Z" fill="url(#tg)"/><path d="M292,185 Q330,165 355,175 Q345,200 315,205 Q300,205 292,195Z" fill="url(#tg)"/><path d="M292,220 Q328,238 350,250 Q332,268 305,258 Q292,248 288,232Z" fill="url(#tg)"/><ellipse cx="200" cy="200" rx="115" ry="95" fill="url(#shell)"/><ellipse cx="200" cy="195" rx="55" ry="48" fill="none" stroke="#6a9a5a" stroke-width="2" opacity=".5"/><path d="M200,148 L200,242" stroke="#6a9a5a" stroke-width="1.5" fill="none" opacity=".35"/><path d="M148,195 L252,195" stroke="#6a9a5a" stroke-width="1.5" fill="none" opacity=".35"/><ellipse cx="200" cy="125" rx="28" ry="24" fill="#4a7a3a"/><circle cx="212" cy="118" r="6" fill="#1a2810"/><circle cx="214" cy="116" r="2.5" fill="#f2ead8" opacity=".6"/><circle cx="188" cy="118" r="6" fill="#1a2810"/><circle cx="190" cy="116" r="2.5" fill="#f2ead8" opacity=".6"/></svg>`,
 
-  lobster:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="lg" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#c85a2a"/><stop offset="100%" stop-color="#7a2a10"/></radialGradient>
-    </defs>
-    <ellipse cx="200" cy="200" rx="165" ry="135" fill="#c85a2a" opacity=".06"/>
-    <!-- tail fan -->
-    <path d="M188,295 Q175,320 158,338 Q178,325 188,308Z" fill="#8a3015" opacity=".8"/>
-    <path d="M196,298 Q192,325 185,348 Q200,330 200,312Z" fill="#9a3818"/>
-    <path d="M204,298 Q208,325 215,348 Q200,330 200,312Z" fill="#9a3818"/>
-    <path d="M212,295 Q225,320 242,338 Q222,325 212,308Z" fill="#8a3015" opacity=".8"/>
-    <path d="M200,295 Q200,330 200,355 Q210,335 210,310Z" fill="#7a2810" opacity=".7"/>
-    <!-- abdomen segments -->
-    <ellipse cx="200" cy="280" rx="38" ry="16" fill="#b04820"/>
-    <ellipse cx="200" cy="260" rx="42" ry="18" fill="#c05228"/>
-    <ellipse cx="200" cy="238" rx="46" ry="20" fill="#c85a2a"/>
-    <ellipse cx="200" cy="215" rx="50" ry="22" fill="#c86030"/>
-    <!-- segment lines -->
-    <path d="M162,270 Q200,264 238,270" stroke="#8a3015" stroke-width="1.5" fill="none" opacity=".5"/>
-    <path d="M158,250 Q200,244 242,250" stroke="#8a3015" stroke-width="1.5" fill="none" opacity=".5"/>
-    <path d="M154,228 Q200,222 246,228" stroke="#8a3015" stroke-width="1.5" fill="none" opacity=".4"/>
-    <!-- carapace (main shell) -->
-    <path d="M145,215 Q148,145 200,128 Q252,145 255,215 Q250,240 200,248 Q150,240 145,215Z" fill="#c86030"/>
-    <!-- carapace ridge -->
-    <path d="M200,128 L200,248" stroke="#8a2818" stroke-width="2" fill="none" opacity=".35"/>
-    <path d="M165,155 Q200,148 235,155" stroke="#8a2818" stroke-width="1" fill="none" opacity=".25"/>
-    <!-- walking legs (3 pairs visible) -->
-    <path d="M155,185 Q128,178 108,188 Q118,198 145,195Z" fill="#b04820"/>
-    <path d="M150,205 Q120,210 100,225 Q115,228 148,218Z" fill="#b04820"/>
-    <path d="M152,222 Q125,235 108,255 Q122,252 155,235Z" fill="#b04820"/>
-    <path d="M245,185 Q272,178 292,188 Q282,198 255,195Z" fill="#b04820"/>
-    <path d="M250,205 Q280,210 300,225 Q285,228 252,218Z" fill="#b04820"/>
-    <path d="M248,222 Q275,235 292,255 Q278,252 245,235Z" fill="#b04820"/>
-    <!-- crusher claw (left) -->
-    <path d="M148,168 Q100,148 72,155 Q60,168 72,185 Q90,192 120,182 Q138,175 148,168Z" fill="#c05228"/>
-    <path d="M72,155 Q50,148 40,162 Q42,175 60,178 Q68,172 72,155Z" fill="#a03818"/>
-    <path d="M72,185 Q52,190 44,202 Q55,210 70,205 Q74,196 72,185Z" fill="#a03818"/>
-    <!-- smaller right claw -->
-    <path d="M252,168 Q295,152 318,160 Q326,172 314,188 Q295,194 268,182 Q257,175 252,168Z" fill="#c05228"/>
-    <!-- antennae -->
-    <path d="M185,128 Q165,100 140,70 Q148,85 162,108 Q172,120 182,130Z" stroke="#8a3015" stroke-width="2" fill="none"/>
-    <path d="M215,128 Q235,100 260,70 Q252,85 238,108 Q228,120 218,130Z" stroke="#8a3015" stroke-width="2" fill="none"/>
-    <!-- antennules shorter -->
-    <path d="M190,128 Q178,112 168,100" stroke="#a04020" stroke-width="1.2" fill="none"/>
-    <path d="M210,128 Q222,112 232,100" stroke="#a04020" stroke-width="1.2" fill="none"/>
-    <!-- eyes (stalked) -->
-    <line x1="185" y1="130" x2="178" y2="118" stroke="#8a3015" stroke-width="2"/>
-    <circle cx="178" cy="116" r="7" fill="#1a0808"/>
-    <circle cx="181" cy="113" r="3" fill="#f2ead8" opacity=".5"/>
-    <line x1="215" y1="130" x2="222" y2="118" stroke="#8a3015" stroke-width="2"/>
-    <circle cx="222" cy="116" r="7" fill="#1a0808"/>
-    <circle cx="225" cy="113" r="3" fill="#f2ead8" opacity=".5"/>
-    <!-- shine -->
-    <path d="M178,148 Q200,138 222,148" stroke="#e88858" stroke-width="2" fill="none" opacity=".35" stroke-linecap="round"/>
-  </svg>`,
+  lobster:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="lg" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#c85a2a"/><stop offset="100%" stop-color="#7a2a10"/></radialGradient></defs><ellipse cx="200" cy="280" rx="38" ry="16" fill="#b04820"/><ellipse cx="200" cy="260" rx="42" ry="18" fill="#c05228"/><ellipse cx="200" cy="238" rx="46" ry="20" fill="#c85a2a"/><ellipse cx="200" cy="215" rx="50" ry="22" fill="#c86030"/><path d="M162,270 Q200,264 238,270" stroke="#8a3015" stroke-width="1.5" fill="none" opacity=".5"/><path d="M145,215 Q148,145 200,128 Q252,145 255,215 Q250,240 200,248 Q150,240 145,215Z" fill="#c86030"/><path d="M155,185 Q128,178 108,188 Q118,198 145,195Z" fill="#b04820"/><path d="M150,205 Q120,210 100,225 Q115,228 148,218Z" fill="#b04820"/><path d="M245,185 Q272,178 292,188 Q282,198 255,195Z" fill="#b04820"/><path d="M250,205 Q280,210 300,225 Q285,228 252,218Z" fill="#b04820"/><path d="M148,168 Q100,148 72,155 Q60,168 72,185 Q90,192 120,182 Q138,175 148,168Z" fill="#c05228"/><path d="M252,168 Q295,152 318,160 Q326,172 314,188 Q295,194 268,182 Q257,175 252,168Z" fill="#c05228"/><line x1="185" y1="130" x2="178" y2="118" stroke="#8a3015" stroke-width="2"/><circle cx="178" cy="116" r="7" fill="#1a0808"/><circle cx="181" cy="113" r="3" fill="#f2ead8" opacity=".5"/><line x1="215" y1="130" x2="222" y2="118" stroke="#8a3015" stroke-width="2"/><circle cx="222" cy="116" r="7" fill="#1a0808"/></svg>`,
 
-  whale:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e3a5c"/><stop offset="100%" stop-color="#0c2035"/></linearGradient>
-      <radialGradient id="wg2" cx="35%" cy="35%" r="50%"><stop offset="0%" stop-color="#2a5a8a" stop-opacity=".5"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-    </defs>
-    <ellipse cx="200" cy="200" rx="180" ry="145" fill="url(#wg2)"/>
-    <!-- body massive -->
-    <path d="M55,200 Q80,135 200,128 Q320,122 368,180 Q390,210 365,248 Q320,295 200,298 Q90,298 55,200Z" fill="url(#wg)"/>
-    <!-- belly pale -->
-    <path d="M90,225 Q140,268 200,278 Q268,285 330,255 Q295,295 200,295 Q112,295 90,225Z" fill="#ddeaee" opacity=".18"/>
-    <!-- pectoral fin large -->
-    <path d="M195,240 Q155,285 128,320 Q158,298 190,268 Q198,255 200,245Z" fill="#1e3a5c"/>
-    <!-- dorsal -->
-    <path d="M235,130 Q240,92 255,78 Q262,108 255,130Z" fill="#162c48"/>
-    <!-- flukes -->
-    <path d="M55,200 Q22,175 8,140 Q14,185 18,210 Q8,238 8,262 Q22,248 45,220 Q50,210 55,200Z" fill="#162c48"/>
-    <!-- throat grooves (baleen whale) -->
-    <path d="M95,230 Q140,260 185,268" stroke="#ddeaee" stroke-width="1" fill="none" opacity=".15"/>
-    <path d="M100,242 Q145,270 188,278" stroke="#ddeaee" stroke-width="1" fill="none" opacity=".12"/>
-    <path d="M108,254 Q150,278 190,286" stroke="#ddeaee" stroke-width="1" fill="none" opacity=".1"/>
-    <!-- eye small relative to body -->
-    <circle cx="325" cy="178" r="10" fill="#0c1a2a"/>
-    <circle cx="329" cy="174" r="4" fill="#f2ead8" opacity=".55"/>
-    <!-- blowhole hint -->
-    <ellipse cx="258" cy="130" rx="8" ry="4" fill="#0c1a2a" opacity=".5"/>
-    <!-- blow spray -->
-    <path d="M258,126 Q252,105 248,88" stroke="#a8cdd8" stroke-width="1.5" fill="none" opacity=".25"/>
-    <path d="M258,126 Q262,102 268,82" stroke="#a8cdd8" stroke-width="1" fill="none" opacity=".2"/>
-    <path d="M258,126 Q256,108 260,92" stroke="#a8cdd8" stroke-width="2" fill="none" opacity=".3"/>
-    <!-- barnacles -->
-    <circle cx="200" cy="155" r="2" fill="#a8cdd8" opacity=".2"/>
-    <circle cx="215" cy="148" r="1.5" fill="#a8cdd8" opacity=".15"/>
-    <circle cx="185" cy="150" r="1.5" fill="#a8cdd8" opacity=".18"/>
-    <!-- shine -->
-    <path d="M185,140 Q220,130 250,140" stroke="#5b8fa8" stroke-width="3" fill="none" opacity=".3" stroke-linecap="round"/>
-  </svg>`,
+  whale:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e3a5c"/><stop offset="100%" stop-color="#0c2035"/></linearGradient></defs><path d="M55,200 Q80,135 200,128 Q320,122 368,180 Q390,210 365,248 Q320,295 200,298 Q90,298 55,200Z" fill="url(#wg)"/><path d="M90,225 Q140,268 200,278 Q268,285 330,255 Q295,295 200,295 Q112,295 90,225Z" fill="#ddeaee" opacity=".18"/><path d="M195,240 Q155,285 128,320 Q158,298 190,268 Q198,255 200,245Z" fill="#1e3a5c"/><path d="M235,130 Q240,92 255,78 Q262,108 255,130Z" fill="#162c48"/><path d="M55,200 Q22,175 8,140 Q14,185 18,210 Q8,238 8,262 Q22,248 45,220 Q50,210 55,200Z" fill="#162c48"/><circle cx="325" cy="178" r="10" fill="#0c1a2a"/><circle cx="329" cy="174" r="4" fill="#f2ead8" opacity=".55"/><path d="M258,126 Q252,105 248,88" stroke="#a8cdd8" stroke-width="1.5" fill="none" opacity=".25"/><path d="M258,126 Q262,102 268,82" stroke="#a8cdd8" stroke-width="1" fill="none" opacity=".2"/><path d="M185,140 Q220,130 250,140" stroke="#5b8fa8" stroke-width="3" fill="none" opacity=".3" stroke-linecap="round"/></svg>`,
 
-  /* scene bg for each animal result */
-  result_bg_dolphin:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0c2a3e"/><stop offset="100%" stop-color="#071420"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb1)"/><ellipse cx="310" cy="300" rx="280" ry="120" fill="#1b4f72" opacity=".2"/><path d="M0,320 Q155,300 310,318 Q465,336 620,308 L620,440 L0,440Z" fill="#0a1e2e" opacity=".95"/><circle cx="150" cy="60" r="1.2" fill="#f2ead8" opacity=".6"/><circle cx="280" cy="40" r=".8" fill="#f2ead8" opacity=".5"/><circle cx="450" cy="55" r="1" fill="#f2ead8" opacity=".7"/><circle cx="550" cy="30" r=".9" fill="#f2ead8" opacity=".4"/><path d="M0,330 Q80,320 160,332 Q240,344 320,328 Q400,314 480,328 Q560,342 620,325" stroke="#5b8fa8" stroke-width="1" fill="none" opacity=".3"/></svg>`,
-  result_bg_shark:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1520"/><stop offset="100%" stop-color="#060c14"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb2)"/><ellipse cx="310" cy="320" rx="260" ry="90" fill="#1b3a5c" opacity=".15"/><path d="M0,340 Q155,322 310,338 Q465,354 620,330 L620,440 L0,440Z" fill="#07101e" opacity=".97"/><circle cx="80" cy="50" r="1" fill="#f2ead8" opacity=".5"/><circle cx="340" cy="30" r="1.2" fill="#f2ead8" opacity=".6"/><circle cx="520" cy="45" r=".8" fill="#f2ead8" opacity=".4"/><line x1="80" y1="0" x2="70" y2="200" stroke="#a8cdd8" stroke-width=".4" opacity=".05"/><line x1="310" y1="0" x2="295" y2="220" stroke="#a8cdd8" stroke-width=".5" opacity=".06"/></svg>`,
-  result_bg_squid:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#12082a"/><stop offset="100%" stop-color="#060410"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb3)"/><circle cx="180" cy="150" r="3" fill="#a878c8" opacity=".5"/><circle cx="380" cy="200" r="2" fill="#c8a8e8" opacity=".35"/><circle cx="480" cy="100" r="2.5" fill="#a878c8" opacity=".4"/><circle cx="100" cy="250" r="1.8" fill="#c8a8e8" opacity=".3"/><circle cx="540" cy="280" r="2" fill="#a878c8" opacity=".35"/><path d="M0,350 Q155,330 310,348 Q465,366 620,338 L620,440 L0,440Z" fill="#0a0416" opacity=".97"/><ellipse cx="310" cy="350" rx="260" ry="80" fill="#5a3a7a" opacity=".08"/></svg>`,
-  result_bg_turtle:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1e14"/><stop offset="100%" stop-color="#060e0a"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb4)"/><ellipse cx="310" cy="300" rx="250" ry="100" fill="#2a5a3a" opacity=".15"/><path d="M80,200 L80,140 Q65,120 82,100 Q98,80 88,55" stroke="#4a7458" stroke-width="2.5" fill="none" opacity=".35"/><path d="M540,180 L542,125 Q528,105 545,85" stroke="#4a7458" stroke-width="2" fill="none" opacity=".3"/><path d="M0,345 Q155,325 310,340 Q465,356 620,330 L620,440 L0,440Z" fill="#060e0a" opacity=".97"/><circle cx="220" cy="260" r="2" fill="#78c878" opacity=".25"/><circle cx="400" cy="280" r="1.5" fill="#78c878" opacity=".2"/></svg>`,
-  result_bg_lobster:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0a06"/><stop offset="100%" stop-color="#0a0402"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb5)"/><path d="M90,200 L88,150 Q75,128 94,105 Q112,82 100,52" stroke="#7a2a10" stroke-width="2.5" fill="none" opacity=".4"/><path d="M530,180 L530,135 Q518,112 535,90 Q550,68 542,40" stroke="#7a2a10" stroke-width="2" fill="none" opacity=".35"/><ellipse cx="310" cy="310" rx="255" ry="85" fill="#8a3015" opacity=".1"/><path d="M0,350 Q155,330 310,346 Q465,362 620,335 L620,440 L0,440Z" fill="#08030a" opacity=".98"/></svg>`,
-  result_bg_whale:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#080e1c"/><stop offset="100%" stop-color="#040810"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb6)"/><ellipse cx="310" cy="280" rx="270" ry="120" fill="#1b3a6a" opacity=".12"/><circle cx="120" cy="80" r="1.5" fill="#a8cdd8" opacity=".4"/><circle cx="300" cy="50" r="1" fill="#f2ead8" opacity=".5"/><circle cx="480" cy="70" r="1.2" fill="#a8cdd8" opacity=".4"/><path d="M0,338 Q155,318 310,335 Q465,352 620,325 L620,440 L0,440Z" fill="#040810" opacity=".98"/><path d="M310,200 Q308,280 306,350" stroke="#a8cdd8" stroke-width=".6" fill="none" opacity=".06"/></svg>`,
+  /* ══ NEW ANIMALS ══ */
+  octopus:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="og" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#8a3a6a"/><stop offset="100%" stop-color="#4a1a3a"/></radialGradient></defs><path d="M145,80 Q200,45 255,80 Q285,110 278,165 Q265,210 200,220 Q135,210 122,165 Q115,110 145,80Z" fill="url(#og)"/><path d="M155,80 Q130,65 112,80 Q105,100 118,118 Q130,125 145,115Z" fill="#6a2a52" opacity=".8"/><path d="M245,80 Q270,65 288,80 Q295,100 282,118 Q270,125 255,115Z" fill="#6a2a52" opacity=".8"/><path d="M140,210 Q118,242 108,275 Q112,260 130,240 Q138,228 142,218Z" fill="#7a2a5a" transform="rotate(-10,120,240)"/><path d="M163,218 Q148,255 138,295 Q150,272 162,248 Q168,232 168,222Z" fill="#8a3a6a"/><path d="M185,222 Q178,262 175,302 Q185,278 190,252 Q192,234 190,224Z" fill="#7a2a5a"/><path d="M207,223 Q208,263 210,303 Q215,279 216,253 Q217,235 212,225Z" fill="#8a3a6a"/><path d="M228,220 Q238,258 244,296 Q235,272 228,248 Q224,232 224,221Z" fill="#7a2a5a"/><path d="M248,215 Q265,248 275,282 Q260,262 248,238 Q242,224 244,216Z" fill="#8a3a6a" transform="rotate(8,256,248)"/><path d="M120,240 Q95,268 82,298 Q100,272 116,248Z" fill="#6a2240" opacity=".7"/><path d="M278,238 Q305,265 318,294 Q300,268 285,244Z" fill="#6a2240" opacity=".7"/><circle cx="140" cy="140" r="4" fill="#ff9a8a" opacity=".5"/><circle cx="165" cy="148" r="3" fill="#ffb8a8" opacity=".4"/><circle cx="235" cy="140" r="4" fill="#ff9a8a" opacity=".5"/><circle cx="210" cy="148" r="3" fill="#ffb8a8" opacity=".4"/><ellipse cx="175" cy="118" rx="18" ry="22" fill="#1e082a"/><ellipse cx="175" cy="118" rx="12" ry="16" fill="#2e1040"/><circle cx="175" cy="114" r="5" fill="#f2ead8" opacity=".75"/><ellipse cx="225" cy="118" rx="18" ry="22" fill="#1e082a"/><ellipse cx="225" cy="118" rx="12" ry="16" fill="#2e1040"/><circle cx="225" cy="114" r="5" fill="#f2ead8" opacity=".75"/><path d="M178,74 Q200,60 222,74" stroke="#c8a8d8" stroke-width="2" fill="none" opacity=".3" stroke-linecap="round"/></svg>`,
+
+  crab:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg" cx="50%" cy="45%" r="50%"><stop offset="0%" stop-color="#e05a28"/><stop offset="100%" stop-color="#8a2808"/></radialGradient></defs><ellipse cx="200" cy="200" rx="90" ry="65" fill="url(#cg)"/><path d="M200,155 Q155,148 140,162 Q148,172 165,170 Q180,168 200,165Z" fill="#b84820"/><path d="M200,155 Q245,148 260,162 Q252,172 235,170 Q220,168 200,165Z" fill="#b84820"/><path d="M115,185 Q80,170 58,178 Q48,195 62,208 Q82,215 108,202Z" fill="#d05020"/><path d="M58,178 Q30,168 18,182 Q14,196 28,204 Q40,200 58,190Z" fill="#b84020"/><path d="M58,208 Q35,218 24,232 Q35,240 50,232 Q58,222 60,212Z" fill="#b84020"/><path d="M285,185 Q320,170 342,178 Q352,195 338,208 Q318,215 292,202Z" fill="#d05020"/><path d="M342,178 Q370,168 382,182 Q386,196 372,204 Q360,200 342,190Z" fill="#b84020"/><path d="M342,208 Q365,218 376,232 Q365,240 350,232 Q342,222 340,212Z" fill="#b84020"/><path d="M140,190 Q108,198 90,215 Q105,225 128,215 Q140,205 145,196Z" fill="#c04820"/><path d="M145,215 Q118,232 105,252 Q120,256 140,242 Q148,228 150,220Z" fill="#c04820"/><path d="M148,238 Q128,262 120,285 Q135,284 152,264 Q158,248 155,242Z" fill="#c04820"/><path d="M260,190 Q292,198 310,215 Q295,225 272,215 Q260,205 255,196Z" fill="#c04820"/><path d="M255,215 Q282,232 295,252 Q280,256 260,242 Q252,228 250,220Z" fill="#c04820"/><path d="M252,238 Q272,262 280,285 Q265,284 248,264 Q242,248 245,242Z" fill="#c04820"/><circle cx="168" cy="178" r="12" fill="#1a0808"/><circle cx="171" cy="174" r="5" fill="#f2ead8" opacity=".6"/><circle cx="232" cy="178" r="12" fill="#1a0808"/><circle cx="235" cy="174" r="5" fill="#f2ead8" opacity=".6"/><path d="M175,210 Q200,218 225,210 Q210,225 200,228 Q190,225 175,210Z" fill="#8a2808"/><path d="M180,212 L175,222 M188,216 L184,226 M200,218 L200,228 M212,216 L216,226 M220,212 L225,222" stroke="#f2ead8" stroke-width="1" opacity=".25"/></svg>`,
+
+  pufferfish:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="pfg" cx="45%" cy="42%" r="52%"><stop offset="0%" stop-color="#d4a030"/><stop offset="60%" stop-color="#8a5a18"/><stop offset="100%" stop-color="#4a2a08"/></radialGradient></defs><circle cx="195" cy="195" r="105" fill="url(#pfg)"/><circle cx="195" cy="225" rx="105" ry="80" fill="#e8c060" opacity=".2"/><line x1="120" y1="100" x2="108" y2="80" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="155" y1="92" x2="148" y2="70" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="195" y1="90" x2="195" y2="68" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="235" y1="92" x2="242" y2="70" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="270" y1="100" x2="282" y2="80" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="290" y1="145" x2="310" y2="138" stroke="#c88828" stroke-width="2" opacity=".5"/><line x1="295" y1="195" x2="318" y2="195" stroke="#c88828" stroke-width="2" opacity=".5"/><line x1="100" y1="145" x2="80" y2="138" stroke="#c88828" stroke-width="2" opacity=".5"/><line x1="95" y1="195" x2="72" y2="195" stroke="#c88828" stroke-width="2" opacity=".5"/><line x1="120" y1="290" x2="108" y2="310" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="195" y1="300" x2="195" y2="322" stroke="#c88828" stroke-width="2" opacity=".6"/><line x1="270" y1="290" x2="282" y2="310" stroke="#c88828" stroke-width="2" opacity=".6"/><circle cx="155" cy="172" r="22" fill="#1a1008"/><circle cx="155" cy="172" r="14" fill="#2a1a10"/><circle cx="150" cy="166" r="7" fill="#f2ead8" opacity=".7"/><circle cx="235" cy="172" r="22" fill="#1a1008"/><circle cx="235" cy="172" r="14" fill="#2a1a10"/><circle cx="230" cy="166" r="7" fill="#f2ead8" opacity=".7"/><path d="M168,228 Q195,238 222,228" stroke="#8a4808" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M188,235 L192,248 M202,235 L198,248" stroke="#6a3808" stroke-width="2" opacity=".6"/><path d="M125,195 Q145,188 165,195" stroke="#c88828" stroke-width="1" fill="none" opacity=".3"/><path d="M225,195 Q245,188 265,195" stroke="#c88828" stroke-width="1" fill="none" opacity=".3"/><ellipse cx="195" cy="170" rx="55" ry="25" fill="#e8c060" opacity=".1"/></svg>`,
+
+  seal:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="sg2" cx="45%" cy="40%" r="52%"><stop offset="0%" stop-color="#8a7a6a"/><stop offset="100%" stop-color="#3a3028"/></radialGradient></defs><path d="M175,290 Q145,310 118,325 Q108,312 128,302 Q148,292 168,285Z" fill="#5a5048"/><path d="M225,290 Q255,310 282,325 Q292,312 272,302 Q252,292 232,285Z" fill="#5a5048"/><path d="M245,285 Q272,295 295,290 Q300,278 285,270 Q265,270 248,278Z" fill="#6a6058"/><path d="M95,200 Q80,185 65,188 Q58,205 72,215 Q84,218 98,210Z" fill="#7a6a5a"/><path d="M305,200 Q320,185 335,188 Q342,205 328,215 Q316,218 302,210Z" fill="#7a6a5a"/><path d="M100,170 Q120,120 200,112 Q280,120 300,170 Q315,210 290,255 Q255,300 200,308 Q145,300 110,255 Q85,210 100,170Z" fill="url(#sg2)"/><path d="M130,240 Q160,272 200,278 Q240,272 270,240 Q252,285 200,292 Q148,285 130,240Z" fill="#d4c8b8" opacity=".25"/><circle cx="165" cy="158" r="16" fill="#1a1410"/><circle cx="162" cy="154" r="6" fill="#f2ead8" opacity=".7"/><circle cx="235" cy="158" r="16" fill="#1a1410"/><circle cx="232" cy="154" r="6" fill="#f2ead8" opacity=".7"/><ellipse cx="200" cy="185" rx="22" ry="14" fill="#c4a898" opacity=".35"/><path d="M188,198 Q200,205 212,198" stroke="#6a5848" stroke-width="2" fill="none" stroke-linecap="round"/><line x1="168" y1="180" x2="145" y2="175" stroke="#8a7a6a" stroke-width="1" opacity=".5"/><line x1="168" y1="186" x2="143" y2="183" stroke="#8a7a6a" stroke-width="1" opacity=".5"/><line x1="168" y1="192" x2="145" y2="190" stroke="#8a7a6a" stroke-width="1" opacity=".5"/><line x1="232" y1="180" x2="255" y2="175" stroke="#8a7a6a" stroke-width="1" opacity=".5"/><line x1="232" y1="186" x2="257" y2="183" stroke="#8a7a6a" stroke-width="1" opacity=".5"/><line x1="232" y1="192" x2="255" y2="190" stroke="#8a7a6a" stroke-width="1" opacity=".5"/><ellipse cx="200" cy="138" rx="12" ry="8" fill="#c4a898" opacity=".2"/><path d="M175,128 Q200,118 225,128" stroke="#a89888" stroke-width="2" fill="none" opacity=".2" stroke-linecap="round"/></svg>`,
+
+  clownfish:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cfg" cx="45%" cy="42%" r="52%"><stop offset="0%" stop-color="#e86020"/><stop offset="100%" stop-color="#a83808"/></radialGradient></defs><path d="M280,200 Q295,175 310,165 Q320,178 315,200 Q310,218 295,225 Q285,218 280,200Z" fill="#c05018"/><path d="M315,200 L348,188 L358,200 L348,212Z" fill="#c05018"/><path d="M80,200 Q100,148 180,140 Q260,133 295,170 Q318,192 305,228 Q275,268 188,272 Q108,272 80,200Z" fill="url(#cfg)"/><rect x="155" y="140" width="18" height="132" rx="8" fill="#f2ead8" opacity=".85"/><rect x="225" y="148" width="16" height="118" rx="7" fill="#f2ead8" opacity=".85"/><rect x="95" y="168" width="14" height="72" rx="6" fill="#f2ead8" opacity=".85"/><path d="M100,215 Q130,248 180,255 Q230,260 270,238 Q248,268 188,272 Q125,272 100,215Z" fill="#1a0808" opacity=".5"/><circle cx="260" cy="175" r="14" fill="#1a0808"/><circle cx="264" cy="170" r="6" fill="#f2ead8" opacity=".8"/><path d="M80,200 Q55,183 38,155 Q42,195 48,218 Q38,242 38,265 Q55,250 72,222 Q77,212 80,200Z" fill="#a83808"/><path d="M105,155 Q90,138 82,118 Q95,128 108,148Z" fill="#c05018" opacity=".7"/><path d="M105,245 Q90,262 82,282 Q95,272 108,252Z" fill="#c05018" opacity=".7"/></svg>`,
+
+  shrimp:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="shg" cx="50%" cy="45%" r="50%"><stop offset="0%" stop-color="#e88060"/><stop offset="100%" stop-color="#a84028"/></radialGradient></defs><path d="M200,80 Q240,75 265,95 Q280,115 268,138 Q252,158 228,162 Q205,165 188,155 Q165,140 162,118 Q160,95 200,80Z" fill="url(#shg)"/><path d="M228,162 Q248,185 258,212 Q262,238 250,258 Q232,275 210,278 Q185,278 168,262 Q150,242 152,215 Q155,188 170,168 Q188,155 228,162Z" fill="#d07050"/><path d="M250,258 Q255,288 245,315 Q232,305 230,282 Q238,268 250,258Z" fill="#c06040"/><path d="M162,118 Q140,108 120,115 Q110,128 118,142 Q130,148 148,140 Q158,132 162,118Z" fill="#e07858"/><path d="M120,115 Q95,105 78,112 Q72,125 80,136 Q95,140 115,132Z" fill="#d06848"/><path d="M198,108 Q178,92 162,80 Q168,95 178,108 Q186,115 195,115Z" fill="#c85a38" opacity=".7"/><path d="M215,108 Q235,92 252,80 Q246,95 236,108 Q228,115 218,115Z" fill="#c85a38" opacity=".7"/><path d="M228,162 Q245,150 252,135" stroke="#d06848" stroke-width="1.5" fill="none" opacity=".5"/><path d="M218,165 Q232,155 236,140" stroke="#d06848" stroke-width="1.5" fill="none" opacity=".5"/><path d="M255,212 Q272,208 288,215 Q280,225 262,225Z" fill="#c06040" opacity=".6"/><path d="M255,232 Q270,230 282,238 Q274,247 258,245Z" fill="#c06040" opacity=".5"/><circle cx="225" cy="112" r="10" fill="#1a0808"/><circle cx="228" cy="108" r="4" fill="#f2ead8" opacity=".7"/><path d="M200,80 Q192,60 182,42" stroke="#c85a38" stroke-width="1.5" fill="none" opacity=".6"/><path d="M220,78 Q228,58 240,40" stroke="#c85a38" stroke-width="1.5" fill="none" opacity=".6"/><path d="M210,78 Q210,55 210,38" stroke="#a83828" stroke-width="2.5" fill="none" opacity=".5"/><circle cx="209" cy="36" r="3" fill="#e87858" opacity=".5"/></svg>`,
+
+  lionfish:`<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="lfg" cx="45%" cy="45%" r="52%"><stop offset="0%" stop-color="#c03028"/><stop offset="100%" stop-color="#601010"/></radialGradient></defs><path d="M85,200 Q110,150 198,142 Q285,135 330,175 Q355,200 335,238 Q295,280 198,282 Q108,280 85,200Z" fill="url(#lfg)"/><path d="M108,220 Q145,258 198,265 Q250,265 285,242 Q262,278 198,282 Q130,278 108,220Z" fill="#f2e0d8" opacity=".2"/><rect x="168" y="80" width="8" height="65" rx="4" fill="#c03028"/><path d="M168,82 Q165,70 168,58 Q175,70 176,82Z" fill="#c84838"/><rect x="188" y="72" width="8" height="73" rx="4" fill="#c03028"/><path d="M188,74 Q185,60 188,46 Q196,60 196,74Z" fill="#c84838"/><rect x="208" y="78" width="8" height="67" rx="4" fill="#c03028"/><path d="M208,80 Q205,66 208,52 Q215,66 216,80Z" fill="#c84838"/><rect x="228" y="82" width="7" height="62" rx="3.5" fill="#c03028"/><path d="M228,84 Q225,72 228,60 Q235,72 235,84Z" fill="#c84838"/><rect x="245" y="90" width="7" height="55" rx="3.5" fill="#c03028"/><line x1="332" y1="168" x2="365" y2="148" stroke="#c03028" stroke-width="6" stroke-linecap="round"/><line x1="338" y1="188" x2="372" y2="175" stroke="#c03028" stroke-width="5" stroke-linecap="round"/><line x1="340" y1="208" x2="374" y2="200" stroke="#c03028" stroke-width="5" stroke-linecap="round"/><line x1="336" y1="228" x2="368" y2="225" stroke="#c03028" stroke-width="4.5" stroke-linecap="round"/><line x1="85" y1="175" x2="52" y2="158" stroke="#c03028" stroke-width="5" stroke-linecap="round"/><line x1="88" y1="200" x2="54" y2="194" stroke="#c03028" stroke-width="5" stroke-linecap="round"/><line x1="90" y1="222" x2="56" y2="220" stroke="#c03028" stroke-width="4.5" stroke-linecap="round"/><path d="M198,282 Q190,308 185,335" stroke="#c03028" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M198,282 Q208,308 215,335" stroke="#c03028" stroke-width="5" stroke-linecap="round" fill="none"/><rect x="150" y="160" width="10" height="62" rx="3" fill="#f2ead8" opacity=".2"/><rect x="240" y="162" width="10" height="58" rx="3" fill="#f2ead8" opacity=".2"/><circle cx="290" cy="172" r="14" fill="#1a0808"/><circle cx="294" cy="168" r="6" fill="#f2ead8" opacity=".8"/><path d="M290,172" stroke="none"/></svg>`,
+
+  /* Result backgrounds */
+  result_bg_dolphin:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0c2a3e"/><stop offset="100%" stop-color="#071420"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb1)"/><ellipse cx="310" cy="300" rx="280" ry="120" fill="#1b4f72" opacity=".2"/><path d="M0,320 Q155,300 310,318 Q465,336 620,308 L620,440 L0,440Z" fill="#0a1e2e" opacity=".95"/><circle cx="150" cy="60" r="1.2" fill="#f2ead8" opacity=".6"/><circle cx="450" cy="55" r="1" fill="#f2ead8" opacity=".7"/><path d="M0,330 Q80,320 160,332 Q240,344 320,328 Q400,314 480,328 Q560,342 620,325" stroke="#5b8fa8" stroke-width="1" fill="none" opacity=".3"/></svg>`,
+  result_bg_shark:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1520"/><stop offset="100%" stop-color="#060c14"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb2)"/><ellipse cx="310" cy="320" rx="260" ry="90" fill="#1b3a5c" opacity=".15"/><path d="M0,340 Q155,322 310,338 Q465,354 620,330 L620,440 L0,440Z" fill="#07101e" opacity=".97"/></svg>`,
+  result_bg_squid:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#12082a"/><stop offset="100%" stop-color="#060410"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb3)"/><circle cx="180" cy="150" r="3" fill="#a878c8" opacity=".5"/><circle cx="480" cy="100" r="2.5" fill="#a878c8" opacity=".4"/><path d="M0,350 Q155,330 310,348 Q465,366 620,338 L620,440 L0,440Z" fill="#0a0416" opacity=".97"/></svg>`,
+  result_bg_turtle:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1e14"/><stop offset="100%" stop-color="#060e0a"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb4)"/><ellipse cx="310" cy="300" rx="250" ry="100" fill="#2a5a3a" opacity=".15"/><path d="M0,345 Q155,325 310,340 Q465,356 620,330 L620,440 L0,440Z" fill="#060e0a" opacity=".97"/></svg>`,
+  result_bg_lobster:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0a06"/><stop offset="100%" stop-color="#0a0402"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb5)"/><ellipse cx="310" cy="310" rx="255" ry="85" fill="#8a3015" opacity=".1"/><path d="M0,350 Q155,330 310,346 Q465,362 620,335 L620,440 L0,440Z" fill="#08030a" opacity=".98"/></svg>`,
+  result_bg_whale:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#080e1c"/><stop offset="100%" stop-color="#040810"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb6)"/><ellipse cx="310" cy="280" rx="270" ry="120" fill="#1b3a6a" opacity=".12"/><path d="M0,338 Q155,318 310,335 Q465,352 620,325 L620,440 L0,440Z" fill="#040810" opacity=".98"/></svg>`,
+  result_bg_octopus:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb7" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#18082e"/><stop offset="100%" stop-color="#08031a"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb7)"/><circle cx="150" cy="120" r="3" fill="#c888e8" opacity=".4"/><circle cx="480" cy="80" r="2" fill="#a868c8" opacity=".5"/><circle cx="320" cy="160" r="4" fill="#c888e8" opacity=".3"/><path d="M0,348 Q155,328 310,345 Q465,362 620,335 L620,440 L0,440Z" fill="#060210" opacity=".97"/></svg>`,
+  result_bg_crab:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb8" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e0e06"/><stop offset="100%" stop-color="#0c0402"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb8)"/><ellipse cx="310" cy="310" rx="260" ry="80" fill="#a04010" opacity=".1"/><path d="M0,352 Q155,332 310,348 Q465,364 620,337 L620,440 L0,440Z" fill="#080302" opacity=".98"/></svg>`,
+  result_bg_pufferfish:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb9" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1206"/><stop offset="100%" stop-color="#080602"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb9)"/><ellipse cx="310" cy="300" rx="255" ry="90" fill="#c89030" opacity=".08"/><path d="M0,345 Q155,325 310,342 Q465,358 620,332 L620,440 L0,440Z" fill="#060402" opacity=".98"/></svg>`,
+  result_bg_seal:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb10" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101210"/><stop offset="100%" stop-color="#060806"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb10)"/><ellipse cx="310" cy="310" rx="255" ry="85" fill="#a8a898" opacity=".08"/><path d="M0,342 Q155,322 310,338 Q465,354 620,328 L620,440 L0,440Z" fill="#060806" opacity=".98"/></svg>`,
+  result_bg_clownfish:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb11" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e0e06"/><stop offset="100%" stop-color="#0c0402"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb11)"/><ellipse cx="310" cy="300" rx="250" ry="85" fill="#e06020" opacity=".08"/><path d="M0,345 Q155,325 310,342 Q465,358 620,332 L620,440 L0,440Z" fill="#080302" opacity=".98"/></svg>`,
+  result_bg_shrimp:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb12" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0c08"/><stop offset="100%" stop-color="#0a0402"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb12)"/><ellipse cx="310" cy="310" rx="250" ry="80" fill="#e08060" opacity=".07"/><path d="M0,348 Q155,328 310,345 Q465,362 620,335 L620,440 L0,440Z" fill="#060302" opacity=".98"/></svg>`,
+  result_bg_lionfish:`<svg viewBox="0 0 620 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rb13" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0808"/><stop offset="100%" stop-color="#0a0404"/></linearGradient></defs><rect width="620" height="440" fill="url(#rb13)"/><ellipse cx="310" cy="305" rx="260" ry="85" fill="#c03020" opacity=".1"/><path d="M0,345 Q155,325 310,342 Q465,358 620,332 L620,440 L0,440Z" fill="#080204" opacity=".98"/></svg>`,
 };
 
-/* ══════════════════════════════════════
-   BIG FIVE × NARRATIVE QUESTIONS
-   Each question maps to Big Five traits:
-   [O=Openness, C=Conscientiousness,
-    E=Extraversion, A=Agreeableness,
-    N=Neuroticism-reversed]
-   Animal scores: [Dolphin,Shark,Squid,Turtle,Lobster,Whale]
-══════════════════════════════════════ */
+/* ══ QUESTIONS ══ */
 const BASE_QS = [
   {
-    scene: 'scene_beach',
-    eyebrow: 'บทที่หนึ่ง · ริมชายหาด',
-    text: `คืนนั้นที่<em>ชายหาดบางแสน</em> คุณเห็นกลุ่มคนนั่งล้อมกองไฟ หัวเราะเสียงดัง คุณเดินคนเดียวอยู่ห่างๆ`,
-    opts: [
-      { t:'เดินเข้าไปร่วมวงเลย ไม่รอ', r:'ชอบเข้าหาคน', v:[2,0,0,0,0,1] },
-      { t:'อยากเข้าไป แต่รอดูก่อนสักครู่', r:'เปิดใจแต่ระวัง', v:[1,0,1,1,0,1] },
-      { t:'ยิ้มให้ แล้วเดินต่อ ชอบความเงียบ', r:'ชอบอยู่คนเดียว', v:[0,0,0,2,1,0] },
-      { t:'นั่งมองอยู่ห่างๆ แค่นั้นก็พอ', r:'ชอบสังเกตมากกว่าร่วม', v:[0,0,2,0,1,0] },
+    scene:'scene_beach',eyebrow:'บทที่หนึ่ง · ริมชายหาด',
+    text:`คืนนั้นที่<em>ชายหาดบางแสน</em> คุณเห็นกลุ่มคนนั่งล้อมกองไฟ หัวเราะเสียงดัง คุณเดินคนเดียวอยู่ห่างๆ`,
+    opts:[
+      {t:'เดินเข้าไปร่วมวงเลย ไม่รอ',r:'ชอบเข้าหาคน',v:[2,0,0,0,0,1,2,0,0,0,0,0,0]},
+      {t:'อยากเข้าไป แต่รอดูก่อนสักครู่',r:'เปิดใจแต่ระวัง',v:[1,0,1,1,0,1,1,1,0,1,1,0,0]},
+      {t:'ยิ้มให้ แล้วเดินต่อ ชอบความเงียบ',r:'ชอบอยู่คนเดียว',v:[0,0,0,2,1,0,0,0,2,1,0,1,0]},
+      {t:'นั่งมองอยู่ห่างๆ แค่นั้นก็พอ',r:'ชอบสังเกตมากกว่าร่วม',v:[0,0,2,0,1,0,0,0,1,0,0,0,2]},
     ],
-    responses: [
+    responses:[
       `แสงไฟส้มอบอุ่นกระทบใบหน้า คุณยิ้มกว้าง — นี่แหละคือที่ที่คุณต้องอยู่`,
-      `ก้าวแรกช้า แต่ก็ก้าวไป ทะเลเห็นทุกอย่าง`,
+      `ก้าวแรกช้า แต่ก็ก้าว ทะเลเห็นทุกอย่าง`,
       `เสียงหัวเราะลอยผ่านมาแล้วก็ผ่านไป คุณยิ้มให้ท้องฟ้า ความสุขเล็กๆ นี้เป็นของคุณ`,
       `คุณนั่งในความมืด สังเกตทุกอย่าง บางทีการมองก็ดีกว่าการเข้าไปอยู่ในนั้น`,
     ]
   },
   {
-    scene: 'scene_deep',
-    eyebrow: 'บทที่สอง · ใต้ผิวน้ำ',
-    text: `คุณดำน้ำอยู่ในอ่าวเกาะล้าน แล้วเห็น<em>แสงวาบสีน้ำเงิน</em>แปลกๆ ห่างออกไปไม่กี่เมตร`,
-    opts: [
-      { t:'ว่ายเข้าหาเลย อยากรู้!', r:'กล้าและอยากรู้', v:[0,2,0,0,0,0] },
-      { t:'หยุดก่อน มองดูว่ามันคืออะไร', r:'คิดก่อนทำ', v:[0,1,2,1,0,0] },
-      { t:'โบกเรียกเพื่อนที่อยู่ใกล้ๆ ให้มาดูด้วย', r:'ชอบแบ่งปัน', v:[2,0,0,0,0,1] },
-      { t:'ลอยนิ่ง รอให้มันเคลื่อนก่อน', r:'อดทน ไม่รีบ', v:[0,0,0,2,0,1] },
+    scene:'scene_deep',eyebrow:'บทที่สอง · ใต้ผิวน้ำ',
+    text:`คุณดำน้ำอยู่ในอ่าวเกาะล้าน แล้วเห็น<em>แสงวาบสีน้ำเงิน</em>แปลกๆ ห่างออกไปไม่กี่เมตร`,
+    opts:[
+      {t:'ว่ายเข้าหาเลย อยากรู้!',r:'กล้าและอยากรู้',v:[0,2,0,0,0,0,0,2,1,0,0,2,0]},
+      {t:'หยุดก่อน มองดูว่ามันคืออะไร',r:'คิดก่อนทำ',v:[0,1,2,1,0,0,0,1,1,0,0,0,2]},
+      {t:'โบกเรียกเพื่อนที่อยู่ใกล้ๆ ให้มาดูด้วย',r:'ชอบแบ่งปัน',v:[2,0,0,0,0,1,2,0,0,1,2,0,0]},
+      {t:'ลอยนิ่ง รอให้มันเคลื่อนก่อน',r:'อดทน ไม่รีบ',v:[0,0,0,2,0,1,0,0,0,2,0,0,1]},
     ],
-    responses: [
+    responses:[
       `หัวใจเต้นแรง คุณว่ายเข้าหา ใครรู้ว่าข้างหน้าคืออะไร? แต่นั่นแหละคือชีวิต`,
       `คุณลอยนิ่ง จ้องมอง สมองทำงาน — จนกว่าจะได้คำตอบ`,
       `แสงนั้นสวยเกินกว่าจะเก็บไว้คนเดียว เพื่อนต้องมาเห็นด้วย`,
@@ -1230,16 +1353,15 @@ const BASE_QS = [
     ]
   },
   {
-    scene: 'scene_storm',
-    eyebrow: 'บทที่สาม · พายุมาเยือน',
-    text: `เรืออยู่กลางทะเล <em>พายุเริ่มก่อตัว</em> คลื่นซัดกราบเรือ ทุกคนรอดูว่าคุณจะทำอะไร`,
-    opts: [
-      { t:'สั่งการทันที แบ่งหน้าที่ให้ทุกคนเลย', r:'เป็นผู้นำ', v:[0,2,0,0,0,0] },
-      { t:'คิดหาเส้นทางกลับฝั่งที่เร็วที่สุดก่อน', r:'คิดเป็นระบบ', v:[0,1,2,0,0,0] },
-      { t:'ถามทุกคนก่อน แล้วค่อยตัดสินใจด้วยกัน', r:'ฟังคนอื่น', v:[1,0,0,2,0,1] },
-      { t:'ใจเย็น ค่อยๆ ทำทีละขั้น', r:'สงบในวิกฤต', v:[0,1,0,1,1,0] },
+    scene:'scene_storm',eyebrow:'บทที่สาม · พายุมาเยือน',
+    text:`เรืออยู่กลางทะเล <em>พายุเริ่มก่อตัว</em> คลื่นซัดกราบเรือ ทุกคนรอดูว่าคุณจะทำอะไร`,
+    opts:[
+      {t:'สั่งการทันที แบ่งหน้าที่ให้ทุกคนเลย',r:'เป็นผู้นำ',v:[0,2,0,0,0,0,0,2,0,0,0,1,0]},
+      {t:'คิดหาเส้นทางกลับฝั่งที่เร็วที่สุดก่อน',r:'คิดเป็นระบบ',v:[0,1,2,0,0,0,0,1,1,0,0,0,2]},
+      {t:'ถามทุกคนก่อน แล้วค่อยตัดสินใจด้วยกัน',r:'ฟังคนอื่น',v:[1,0,0,2,0,1,1,0,0,1,2,0,0]},
+      {t:'ใจเย็น ค่อยๆ ทำทีละขั้น',r:'สงบในวิกฤต',v:[0,1,0,1,1,0,0,0,2,1,0,0,1]},
     ],
-    responses: [
+    responses:[
       `เสียงคุณดังชัดในพายุ ทุกคนหันมาและลงมือ โลกต้องการคนกล้าพูดก่อน`,
       `สายตาวิ่งเร็ว เส้นทางปรากฏในหัวก่อนใคร คุณรู้ว่าต้องทำอะไร`,
       `คุณรวบรวมความคิดของทุกคน แล้วทางออกก็ปรากฏ ดีกว่าคิดคนเดียว`,
@@ -1247,16 +1369,15 @@ const BASE_QS = [
     ]
   },
   {
-    scene: 'scene_cave',
-    eyebrow: 'บทที่สี่ · ถ้ำลึก',
-    text: `คุณพบ<em>ถ้ำใต้น้ำ</em>ที่ไม่มีในแผนที่ มืดและเงียบมาก ยังไม่มีใครเคยเข้าไป`,
-    opts: [
-      { t:'เข้าไปดูเลย อยากรู้ว่าข้างในมีอะไร', r:'ชอบสำรวจ', v:[0,1,2,0,0,0] },
-      { t:'จดไว้ก่อน แล้วกลับมาพร้อมอุปกรณ์', r:'วางแผนรอบคอบ', v:[0,2,0,1,0,0] },
-      { t:'ชวนเพื่อนมาก่อน ไม่เข้าคนเดียว', r:'ชอบไปด้วยกัน', v:[2,0,0,1,0,0] },
-      { t:'นั่งฟังเสียงน้ำหยดอยู่ที่ปากถ้ำ ก็พอแล้ว', r:'รับได้กับความไม่รู้', v:[0,0,1,1,1,1] },
+    scene:'scene_cave',eyebrow:'บทที่สี่ · ถ้ำลึก',
+    text:`คุณพบ<em>ถ้ำใต้น้ำ</em>ที่ไม่มีในแผนที่ มืดและเงียบมาก ยังไม่มีใครเคยเข้าไป`,
+    opts:[
+      {t:'เข้าไปดูเลย อยากรู้ว่าข้างในมีอะไร',r:'ชอบสำรวจ',v:[0,1,2,0,0,0,0,2,1,0,0,1,2]},
+      {t:'จดไว้ก่อน แล้วกลับมาพร้อมอุปกรณ์',r:'วางแผนรอบคอบ',v:[0,2,0,1,0,0,0,1,1,0,0,0,1]},
+      {t:'ชวนเพื่อนมาก่อน ไม่เข้าคนเดียว',r:'ชอบไปด้วยกัน',v:[2,0,0,1,0,0,2,0,0,1,2,0,0]},
+      {t:'นั่งฟังเสียงน้ำหยดอยู่ที่ปากถ้ำ ก็พอแล้ว',r:'รับได้กับความไม่รู้',v:[0,0,1,1,1,1,0,0,2,1,0,0,1]},
     ],
-    responses: [
+    responses:[
       `ความมืดโอบรับ หัวใจเต้นแรง — นี่คือความรู้สึกที่คุณชอบที่สุด`,
       `จิตใจเป็นระเบียบ วันนี้ไม่ใช่วัน แต่เมื่อถึงเวลา คุณจะพร้อมที่สุด`,
       `ถ้ำนี้จะดีกว่า ถ้ามีคนมาด้วย คุณรอได้`,
@@ -1264,16 +1385,15 @@ const BASE_QS = [
     ]
   },
   {
-    scene: 'scene_coral',
-    eyebrow: 'บทที่ห้า · ปะการังและขยะ',
-    text: `คุณลอยอยู่เหนือ<em>ปะการังสวยงาม</em>ในอ่าวไทย แต่เห็นขยะลอยมา ปะการังบางส่วนเริ่มซีด`,
-    opts: [
-      { t:'ดำลงเก็บขยะทันที คนเดียวก็ได้', r:'ลงมือทำก่อน', v:[0,1,0,0,0,2] },
-      { t:'โพสต์รูปแท็กหน่วยงาน ให้คนที่ใช่จัดการ', r:'ระดมความช่วยเหลือ', v:[2,0,0,0,0,1] },
-      { t:'จดพิกัด วัดความเสียหายก่อนลงมือ', r:'วิเคราะห์ก่อน', v:[0,0,2,1,0,0] },
-      { t:'แค่นั่งมองความงามที่กำลังหายไปก่อน', r:'รู้สึกลึกซึ้ง', v:[0,0,0,1,1,1] },
+    scene:'scene_coral',eyebrow:'บทที่ห้า · ปะการังและขยะ',
+    text:`คุณลอยอยู่เหนือ<em>ปะการังสวยงาม</em>ในอ่าวไทย แต่เห็นขยะลอยมา ปะการังบางส่วนเริ่มซีด`,
+    opts:[
+      {t:'ดำลงเก็บขยะทันที คนเดียวก็ได้',r:'ลงมือทำก่อน',v:[0,1,0,0,0,2,0,2,1,0,0,1,0]},
+      {t:'โพสต์รูปแท็กหน่วยงาน ให้คนที่ใช่จัดการ',r:'ระดมความช่วยเหลือ',v:[2,0,0,0,0,1,2,0,0,1,2,0,0]},
+      {t:'จดพิกัด วัดความเสียหายก่อนลงมือ',r:'วิเคราะห์ก่อน',v:[0,0,2,1,0,0,0,1,1,0,0,0,2]},
+      {t:'แค่นั่งมองความงามที่กำลังหายไปก่อน',r:'รู้สึกลึกซึ้ง',v:[0,0,0,1,1,1,0,0,0,1,0,0,1]},
     ],
-    responses: [
+    responses:[
       `มือหยิบขยะทีละชิ้น ทุกการกระทำเล็กๆ มีความหมาย`,
       `ภาพนั้นส่งออกไป บางทีการส่งเสียงสร้างการเปลี่ยนแปลงได้มากกว่า`,
       `ข้อมูลในหัวเริ่มประมวลผล มันไม่ใช่ความเย็นชา — มันคือการแก้ปัญหาที่ได้ผล`,
@@ -1281,16 +1401,15 @@ const BASE_QS = [
     ]
   },
   {
-    scene: 'scene_open',
-    eyebrow: 'บทที่หก · กลางทะเล',
-    text: `เรือหยุดกลางอ่าวไทย ไม่เห็นฝั่งเลยสักทิศ มีแค่ทะเลกับท้องฟ้า คุณ<em>รู้สึกยังไง</em>?`,
-    opts: [
-      { t:'ตื่นเต้น! โลกกว้างขนาดนี้มีอีกเยอะให้ไป', r:'ชอบความท้าทาย', v:[2,1,1,0,0,0] },
-      { t:'สงบดี ธรรมชาติสอนให้รู้จักตัวเอง', r:'อยู่กับตัวเองได้', v:[0,0,0,1,1,2] },
-      { t:'สงสัยว่าใต้น้ำตรงนี้มีอะไรบ้าง', r:'ชอบจินตนาการ', v:[0,0,2,0,0,1] },
-      { t:'รู้สึกเล็ก แต่โอเค ปัญหาต่างๆ ดูเล็กลงเลย', r:'มองภาพใหญ่', v:[0,0,0,2,1,0] },
+    scene:'scene_open',eyebrow:'บทที่หก · กลางทะเล',
+    text:`เรือหยุดกลางอ่าวไทย ไม่เห็นฝั่งเลยสักทิศ มีแค่ทะเลกับท้องฟ้า คุณ<em>รู้สึกยังไง</em>?`,
+    opts:[
+      {t:'ตื่นเต้น! โลกกว้างขนาดนี้มีอีกเยอะให้ไป',r:'ชอบความท้าทาย',v:[2,1,1,0,0,0,2,1,0,0,1,1,0]},
+      {t:'สงบดี ธรรมชาติสอนให้รู้จักตัวเอง',r:'อยู่กับตัวเองได้',v:[0,0,0,1,1,2,0,0,1,2,0,0,1]},
+      {t:'สงสัยว่าใต้น้ำตรงนี้มีอะไรบ้าง',r:'ชอบจินตนาการ',v:[0,0,2,0,0,1,0,0,1,0,0,1,2]},
+      {t:'รู้สึกเล็ก แต่โอเค ปัญหาต่างๆ ดูเล็กลงเลย',r:'มองภาพใหญ่',v:[0,0,0,2,1,0,0,0,1,1,0,0,1]},
     ],
-    responses: [
+    responses:[
       `ความกว้างใหญ่ไม่ได้ทำให้คุณหดเล็ก — มันทำให้รู้ว่ายังมีพื้นที่ให้โตอีกมาก`,
       `ลมทะเลพัดผ่าน คุณหายใจลึกๆ บางทีการเป็นส่วนหนึ่งของสิ่งใหญ่กว่าก็เพียงพอ`,
       `จินตนาการดำดิ่งลงไปใต้น้ำ — ที่นั่นมีอะไร? คำถามคือของขวัญที่ดีที่สุด`,
@@ -1298,16 +1417,15 @@ const BASE_QS = [
     ]
   },
   {
-    scene: 'scene_night',
-    eyebrow: 'บทสุดท้าย · คืนดาว',
-    text: `คืนสุดท้าย คุณนอนหงายบนดาดฟ้าเรือ ดูดาวเต็มฟ้า ทะเลเรืองแสง<em>แพลงก์ตอนสีน้ำเงิน</em> ก่อนหลับ คุณคิดถึงอะไร?`,
-    opts: [
-      { t:'พรุ่งนี้จะเล่าให้ทุกคนฟัง รอไม่ไหวแล้ว', r:'ชอบแบ่งปัน', v:[2,0,0,1,0,1] },
-      { t:'วางแผนว่าจะทำอะไรต่อในชีวิต', r:'มุ่งมั่น', v:[0,2,0,0,1,0] },
-      { t:'ไม่คิดอะไร แค่จมอยู่ในความงามนี้', r:'อยู่กับปัจจุบัน', v:[0,0,1,1,1,1] },
-      { t:'สงสัยว่าแสงนั้นรู้สึกอะไรไหม ถ้ามีชีวิต', r:'ชอบคิดลึก', v:[0,0,2,0,0,2] },
+    scene:'scene_night',eyebrow:'บทสุดท้าย · คืนดาว',
+    text:`คืนสุดท้าย คุณนอนหงายบนดาดฟ้าเรือ ดูดาวเต็มฟ้า ทะเลเรืองแสง<em>แพลงก์ตอนสีน้ำเงิน</em> ก่อนหลับ คุณคิดถึงอะไร?`,
+    opts:[
+      {t:'พรุ่งนี้จะเล่าให้ทุกคนฟัง รอไม่ไหวแล้ว',r:'ชอบแบ่งปัน',v:[2,0,0,1,0,1,2,0,0,1,2,0,0]},
+      {t:'วางแผนว่าจะทำอะไรต่อในชีวิต',r:'มุ่งมั่น',v:[0,2,0,0,1,0,0,2,1,0,0,1,0]},
+      {t:'ไม่คิดอะไร แค่จมอยู่ในความงามนี้',r:'อยู่กับปัจจุบัน',v:[0,0,1,1,1,1,0,0,2,1,0,0,1]},
+      {t:'สงสัยว่าแสงนั้นรู้สึกอะไรไหม ถ้ามีชีวิต',r:'ชอบคิดลึก',v:[0,0,2,0,0,2,0,0,1,0,0,0,2]},
     ],
-    responses: [
+    responses:[
       `ใจอบอุ่น นึกถึงทุกคน รอยยิ้มแผ่ออกในความมืด ไม่มีความสุขใดเหมือนมีคนที่รอฟัง`,
       `ในความเงียบของคืนทะเล เป้าหมายใหม่ปรากฏขึ้นชัดเจน คุณรู้แล้วว่าต้องทำอะไร`,
       `แสงน้ำเงินระยิบรอบเรือ ไม่มีอดีต ไม่มีอนาคต มีแค่ตอนนี้ก็พอ`,
@@ -1316,56 +1434,49 @@ const BASE_QS = [
   },
 ];
 
-/* Seasonal extra Q */
 const SEA_QS = {
-  hot:{
-    scene:'scene_coral',eyebrow:'บทพิเศษ · ☀️ ฤดูร้อน',
+  hot:{scene:'scene_coral',eyebrow:'บทพิเศษ · ☀️ ฤดูร้อน',
     text:`ร้อนมากวันนี้ ชายหาดแน่นขนัด คุณจะ<em>อยู่ที่ไหน</em>?`,
     opts:[
-      {t:'กระโดดลงน้ำทันที เล่นน้ำให้สุด',r:'ชอบเคลื่อนไหว',v:[2,1,0,0,0,0]},
-      {t:'หาที่เงียบๆ ห่างคน นั่งอ่านหนังสือ',r:'ชอบความสงบ',v:[0,0,0,2,0,0]},
-      {t:'ชวนคนแปลกหน้าเล่นวอลเลย์บอล',r:'ชอบสร้างทีมใหม่',v:[2,0,0,1,0,0]},
-      {t:'นั่งรอดูพระอาทิตย์ตกก่อน',r:'ชอบความสวยงาม',v:[0,0,1,1,1,1]},
+      {t:'กระโดดลงน้ำทันที เล่นน้ำให้สุด',r:'ชอบเคลื่อนไหว',v:[2,1,0,0,0,0,2,1,0,0,1,1,0]},
+      {t:'หาที่เงียบๆ ห่างคน นั่งอ่านหนังสือ',r:'ชอบความสงบ',v:[0,0,0,2,0,0,0,0,1,2,0,0,1]},
+      {t:'ชวนคนแปลกหน้าเล่นวอลเลย์บอล',r:'ชอบสร้างทีมใหม่',v:[2,0,0,1,0,0,2,0,0,1,2,0,0]},
+      {t:'นั่งรอดูพระอาทิตย์ตกก่อน',r:'ชอบความสวยงาม',v:[0,0,1,1,1,1,0,0,0,1,0,0,1]},
     ],
     responses:[
       `น้ำเย็นกระแทกความร้อน คุณหัวเราะโดยไม่รู้ตัว`,
       `เงาร่มบังแสง หน้าหนังสือพลิกในลม คุณพบสวรรค์เล็กๆ ของตัวเอง`,
       `สิบนาทีต่อมาคุณมีทีมใหม่ ความสนุกไม่ต้องรอรู้จักกัน`,
       `แสงส้มลาลับขอบฟ้า คุณจดจำทุกสีไว้ในใจ`,
-    ]
-  },
-  rainy:{
-    scene:'scene_storm',eyebrow:'บทพิเศษ · 🌧️ ฤดูฝน',
+    ]},
+  rainy:{scene:'scene_storm',eyebrow:'บทพิเศษ · 🌧️ ฤดูฝน',
     text:`ฝนตกกะทันหัน คุณวิ่งเข้าร้านกาแฟริมหาด มีคนแปลกหน้านั่งอยู่ด้วย คุณ<em>ทำอะไร</em>?`,
     opts:[
-      {t:'ชวนคุยเลย ฝนตกนาน อยู่ว่างๆ ทำไม',r:'ชอบคุย',v:[2,0,0,1,0,1]},
-      {t:'เปิดโน้ตบุ๊กทำงาน',r:'ใช้เวลาให้เป็นประโยชน์',v:[0,2,0,0,0,0]},
-      {t:'มองฝนเงียบๆ นึกถึงคนที่รัก',r:'ลึกซึ้ง',v:[0,0,0,0,0,2]},
-      {t:'เขียนหรือวาดรูปจากสิ่งที่เห็น',r:'ชอบสร้างสรรค์',v:[0,0,2,0,1,0]},
+      {t:'ชวนคุยเลย ฝนตกนาน อยู่ว่างๆ ทำไม',r:'ชอบคุย',v:[2,0,0,1,0,1,2,0,0,1,2,0,0]},
+      {t:'เปิดโน้ตบุ๊กทำงาน',r:'ใช้เวลาให้เป็นประโยชน์',v:[0,2,0,0,0,0,0,2,1,0,0,1,0]},
+      {t:'มองฝนเงียบๆ นึกถึงคนที่รัก',r:'ลึกซึ้ง',v:[0,0,0,0,0,2,0,0,0,1,0,0,1]},
+      {t:'เขียนหรือวาดรูปจากสิ่งที่เห็น',r:'ชอบสร้างสรรค์',v:[0,0,2,0,1,0,0,0,1,0,0,1,2]},
     ],
     responses:[
       `เสียงฝนเป็นฉากหลัง การสนทนาที่เริ่มจากไม่มีอะไร กลายเป็นเรื่องที่จะเล่าอีกนาน`,
       `คีย์บอร์ดผสมเสียงฝน คุณทำเสร็จก่อนฝนหยุด`,
       `ใบหน้าของคนที่คิดถึงลอยขึ้นมา ฝนทำให้รู้สึกถึงเขา/เธอมากกว่าปกติ`,
       `ปลายดินสอวิ่งบนกระดาษ ความงามที่ดีที่สุดคือความงามที่เพิ่งผ่านมา`,
-    ]
-  },
-  cool:{
-    scene:'scene_open',eyebrow:'บทพิเศษ · ❄️ ฤดูหนาว',
+    ]},
+  cool:{scene:'scene_open',eyebrow:'บทพิเศษ · ❄️ ฤดูหนาว',
     text:`อากาศเย็นสบาย เพื่อนชวนออกเรือหาปลาตั้งแต่เช้ามืด คุณ<em>เป็นยังไง</em>?`,
     opts:[
-      {t:'ตื่นเต้นจนนอนไม่หลับเลย',r:'กระตือรือร้น',v:[2,0,1,0,0,0]},
-      {t:'เตรียมอุปกรณ์ครบก่อนนอน วางแผนเรียบร้อย',r:'รอบคอบ',v:[0,2,0,1,0,0]},
-      {t:'ไปเพราะอยากอยู่กับเพื่อน ปลาได้ไม่ได้ไม่สน',r:'รักความสัมพันธ์',v:[1,0,0,2,0,1]},
-      {t:'นึกถึงแสงแรกของวันบนผิวน้ำ ชอบแล้ว',r:'ชอบความงาม',v:[0,0,1,1,1,1]},
+      {t:'ตื่นเต้นจนนอนไม่หลับเลย',r:'กระตือรือร้น',v:[2,0,1,0,0,0,2,1,0,0,1,1,0]},
+      {t:'เตรียมอุปกรณ์ครบก่อนนอน วางแผนเรียบร้อย',r:'รอบคอบ',v:[0,2,0,1,0,0,0,2,1,0,0,0,1]},
+      {t:'ไปเพราะอยากอยู่กับเพื่อน ปลาได้ไม่ได้ไม่สน',r:'รักความสัมพันธ์',v:[1,0,0,2,0,1,1,0,0,2,2,0,0]},
+      {t:'นึกถึงแสงแรกของวันบนผิวน้ำ ชอบแล้ว',r:'ชอบความงาม',v:[0,0,1,1,1,1,0,0,1,1,0,0,1]},
     ],
     responses:[
       `ยังไม่ตีห้า แต่คุณตื่นแล้ว หัวใจเต้นแรง — ความรู้สึกที่คุณรักมาตลอด`,
       `อุปกรณ์เรียงเป็นระเบียบ แผนอยู่ในหัวแล้ว ความพร้อมคือรูปแบบของความรัก`,
       `ปลาจับได้หรือไม่ก็ไม่สน เช้านี้มีค่าเพราะคนที่นั่งในเรือด้วยกัน`,
       `แสงทองสาดบนผิวน้ำ คุณหายใจลึกๆ บันทึกภาพนี้ไว้ในใจ`,
-    ]
-  }
+    ]}
 };
 
 function getQuestions(){
@@ -1376,58 +1487,92 @@ function getQuestions(){
 }
 const QUESTIONS=getQuestions();
 
-/* ══════════════════════════════════════
-   ANIMALS — Big Five profiles
-══════════════════════════════════════ */
+/* ══ ANIMALS — 13 animals total, scores array length = 13 ══ */
 const ANIMALS=[
   {
     key:'dolphin',emoji:'🐬',name:'โลมา',loc:'แห่งบางแสน',sub:'Dolphin of Bang Saen',
     traits:['Extraversion สูง','Agreeableness สูง','หัวใจเปิด'],
-    desc:`คุณคือพลังงานสังคม — คนที่เปลี่ยนบรรยากาศห้องได้แค่เดินเข้าไป งานวิจัย Big Five ชี้ว่าคนที่มี Extraversion สูงร่วมกับ Agreeableness สูง มักเป็นผู้สร้างความสุขและความเชื่อมโยงให้คนรอบข้างโดยธรรมชาติ เหมือนโลมาบางแสนที่ว่ายมาทักทายทุกคนโดยไม่ต้องถามว่าคุณเป็นใคร`,
-    bf:{O:65,C:60,E:90,A:85,N:25},
-    pop:1247,rare:'พบบ่อย',power:'สังคม'
+    desc:`คุณคือพลังงานสังคม — คนที่เปลี่ยนบรรยากาศห้องได้แค่เดินเข้าไป Extraversion สูงร่วมกับ Agreeableness สูง ทำให้คุณเป็นผู้สร้างความสุขและความเชื่อมโยงให้คนรอบข้างโดยธรรมชาติ เหมือนโลมาบางแสนที่ว่ายมาทักทายทุกคนโดยไม่ต้องถาม`,
+    bf:{O:65,C:60,E:90,A:85,N:25},rare:'พบบ่อย',power:'สังคม'
   },
   {
     key:'shark',emoji:'🦈',name:'ฉลาม',loc:'แห่งเกาะสีชัง',sub:'Shark of Koh Sichang',
     traits:['Conscientiousness สูง','กล้าตัดสินใจ','ผู้นำโดยธรรมชาติ'],
-    desc:`คุณคือผู้นำในวิกฤต — ตัดสินใจเด็ดขาดเมื่อคนอื่นลังเล Conscientiousness สูงทำให้คุณมีวินัยและมุ่งเป้าหมาย ผสมกับ Extraversion ในสถานการณ์กดดัน คุณเปล่งออกมาอย่างชัดเจน เหมือนฉลามที่ไม่หยุดว่าย — หยุดแล้วจมน้ำ`,
-    bf:{O:55,C:88,E:72,A:38,N:30},
-    pop:893,rare:'หายาก',power:'ความกล้า'
+    desc:`คุณคือผู้นำในวิกฤต — ตัดสินใจเด็ดขาดเมื่อคนอื่นลังเล Conscientiousness สูงทำให้คุณมีวินัยและมุ่งเป้าหมาย เหมือนฉลามที่ไม่หยุดว่าย — หยุดแล้วจมน้ำ`,
+    bf:{O:55,C:88,E:72,A:38,N:30},rare:'หายาก',power:'ความกล้า'
   },
   {
     key:'squid',emoji:'🦑',name:'ปลาหมึก',loc:'แห่งศรีราชา',sub:'Squid of Si Racha',
     traits:['Openness สูงมาก','สร้างสรรค์','หลายมิติ'],
-    desc:`คุณคือนักคิดที่ไม่หยุดจินตนาการ Openness to Experience สูงสุดในบรรดาบุคลิกทั้งหมด ทำให้คุณมองเห็นความเชื่อมโยงที่คนอื่นมองข้าม งานวิจัยพบว่า Openness สูงสัมพันธ์กับความคิดสร้างสรรค์และความอยากรู้อยากเห็นที่ไม่มีขีดจำกัด เหมือนปลาหมึกที่เปลี่ยนสีได้ตามใจ`,
-    bf:{O:92,C:55,E:48,A:62,N:55},
-    pop:734,rare:'หายากมาก',power:'ปัญญา'
+    desc:`คุณคือนักคิดที่ไม่หยุดจินตนาการ Openness to Experience สูงสุด ทำให้คุณมองเห็นความเชื่อมโยงที่คนอื่นมองข้าม เหมือนปลาหมึกที่เปลี่ยนสีได้ตามใจ`,
+    bf:{O:92,C:55,E:48,A:62,N:55},rare:'หายากมาก',power:'ปัญญา'
   },
   {
     key:'turtle',emoji:'🐢',name:'เต่าทะเล',loc:'แห่งเกาะล้าน',sub:'Sea Turtle of Koh Larn',
     traits:['Conscientiousness สูง','Neuroticism ต่ำ','มั่นคงสม่ำเสมอ'],
-    desc:`คุณคือหินผาที่ทุกคนพึ่งพาได้ Conscientiousness สูงบวก Neuroticism ต่ำ — นั่นคือสูตรของคนที่สงบได้ในทุกสถานการณ์ ไม่รีบ ไม่ตื่นตระหนก แต่ไปถึงจุดหมายได้เสมอ งานวิจัยชี้ว่าผู้ที่มีบุคลิกแบบนี้มักมีความสุขในระยะยาวสูงกว่าค่าเฉลี่ย เหมือนเต่าที่อยู่มาหลายร้อยล้านปีแล้วยังอยู่`,
-    bf:{O:52,C:85,E:35,A:72,N:18},
-    pop:1056,rare:'พบบ่อย',power:'ความอดทน'
+    desc:`คุณคือหินผาที่ทุกคนพึ่งพาได้ Conscientiousness สูงบวก Neuroticism ต่ำ — สูตรของคนที่สงบได้ในทุกสถานการณ์ เหมือนเต่าที่อยู่มาหลายร้อยล้านปีแล้วยังอยู่`,
+    bf:{O:52,C:85,E:35,A:72,N:18},rare:'พบบ่อย',power:'ความอดทน'
   },
   {
     key:'lobster',emoji:'🦞',name:'กุ้งมังกร',loc:'แห่งพัทยา',sub:'Lobster of Pattaya',
     traits:['Openness สูง','Introversion','เสน่ห์ซ่อนเร้น'],
-    desc:`คุณคือปริศนาที่งดงาม — Openness สูงทำให้คุณลึกและซับซ้อน แต่ Introversion ทำให้คุณไม่แสดงออกง่ายๆ คนต้องใช้เวลากว่าจะค้นพบความลึกในตัวคุณ เหมือนกุ้งมังกรพัทยาที่ซ่อนตัวอยู่ในหิน แต่เมื่อโผล่ออกมาก็งดงามที่สุด`,
-    bf:{O:82,C:62,E:28,A:55,N:48},
-    pop:521,rare:'หายากมาก',power:'เสน่ห์'
+    desc:`คุณคือปริศนาที่งดงาม — Openness สูงทำให้คุณลึกและซับซ้อน แต่ Introversion ทำให้คุณไม่แสดงออกง่ายๆ เหมือนกุ้งมังกรที่ซ่อนตัวอยู่ในหิน แต่เมื่อโผล่ออกมาก็งดงามที่สุด`,
+    bf:{O:82,C:62,E:28,A:55,N:48},rare:'หายากมาก',power:'เสน่ห์'
   },
   {
     key:'whale',emoji:'🐋',name:'วาฬ',loc:'แห่งอ่าวไทย',sub:'Whale of the Gulf of Thailand',
     traits:['Agreeableness สูงมาก','Openness สูง','หัวใจยิ่งใหญ่'],
-    desc:`คุณคือผู้ดูแลผู้อื่นโดยธรรมชาติ Agreeableness สูงทำให้คุณเห็นอกเห็นใจ รับฟัง และดูแลคนรอบข้างอย่างลึกซึ้ง งานวิจัยพบว่า Agreeableness บวก Openness สูงมักสร้างผู้คนที่มีความเข้าใจมนุษย์อย่างลึกซึ้ง เหมือนวาฬที่ร้องเพลงข้ามทะเล — ส่งข้อความที่คนอื่นรับได้จากระยะไกล`,
-    bf:{O:75,C:60,E:55,A:92,N:22},
-    pop:678,rare:'หายากที่สุด',power:'เมตตา'
-  }
+    desc:`คุณคือผู้ดูแลผู้อื่นโดยธรรมชาติ Agreeableness สูงทำให้คุณเห็นอกเห็นใจ รับฟัง และดูแลคนรอบข้างอย่างลึกซึ้ง เหมือนวาฬที่ร้องเพลงข้ามทะเล — ส่งข้อความที่คนอื่นรับได้จากระยะไกล`,
+    bf:{O:75,C:60,E:55,A:92,N:22},rare:'หายากที่สุด',power:'เมตตา'
+  },
+  /* ══ NEW ANIMALS ══ */
+  {
+    key:'octopus',emoji:'🐙',name:'ปลาหมึกยักษ์',loc:'แห่งเกาะสีชัง',sub:'Octopus of Koh Sichang',
+    traits:['Openness สูงมาก','ปรับตัวเก่ง','อัจฉริยะซ่อนเร้น'],
+    desc:`คุณคือนักปรับตัวที่ฉลาดที่สุด — Openness สูงมากบวกกับ Introversion ลึกๆ ทำให้คุณแก้ปัญหาได้หลายทางในเวลาเดียวกัน เหมือนปลาหมึกยักษ์ที่ใช้แขนทั้งแปดคิดคนละเรื่องพร้อมกัน`,
+    bf:{O:95,C:65,E:38,A:60,N:50},rare:'หายากมาก',power:'ความฉลาด'
+  },
+  {
+    key:'crab',emoji:'🦀',name:'ปู',loc:'แห่งบางแสน',sub:'Crab of Bang Saen',
+    traits:['Conscientiousness สูง','ป้องกันตัวเก่ง','ทำงานหนัก'],
+    desc:`คุณคือคนที่ทำงานอย่างพิถีพิถันและไม่ยอมแพ้ง่ายๆ Conscientiousness สูงทำให้คุณเอาใจใส่รายละเอียดและรักษาสิ่งที่สำคัญ เหมือนปูที่เดินข้างแต่ไปถึงที่หมายเสมอ`,
+    bf:{O:48,C:90,E:42,A:58,N:35},rare:'พบบ่อย',power:'ความพากเพียร'
+  },
+  {
+    key:'pufferfish',emoji:'🐡',name:'ปลาปักเป้า',loc:'แห่งเกาะล้าน',sub:'Pufferfish of Koh Larn',
+    traits:['Neuroticism ต่ำ','ป้องกันตัวแน่น','เซอร์ไพรส์เสมอ'],
+    desc:`คุณคือคนที่ดูเงียบๆ แต่ซ่อนพลังไว้มหาศาล Neuroticism ต่ำทำให้คุณไม่ตื่นตระหนกง่าย แต่เมื่อถูกกดดัน คุณแสดงศักยภาพที่คนอื่นคาดไม่ถึง เหมือนปลาปักเป้าที่พองตัวได้สามเท่า`,
+    bf:{O:60,C:70,E:45,A:65,N:15},rare:'หายาก',power:'ความยืดหยุ่น'
+  },
+  {
+    key:'seal',emoji:'🦭',name:'แมวน้ำ',loc:'แห่งพัทยา',sub:'Seal of Pattaya',
+    traits:['Agreeableness สูง','Extraversion ปานกลาง','อ่อนโยนและสนุก'],
+    desc:`คุณคือคนที่ทุกคนรักได้ทันที — Agreeableness สูงทำให้คุณอ่อนโยนและเป็นมิตร ส่วนพลังงานที่ซ่อนอยู่ทำให้คุณสนุกกว่าที่หน้าตาบอก เหมือนแมวน้ำที่น่ารักแต่ว่ายน้ำได้เร็วกว่านักว่ายน้ำมนุษย์`,
+    bf:{O:68,C:62,E:65,A:88,N:28},rare:'พบบ่อย',power:'ความน่ารัก'
+  },
+  {
+    key:'clownfish',emoji:'🐟',name:'ปลาการ์ตูน',loc:'แห่งเกาะช้าง',sub:'Clownfish of Koh Chang',
+    traits:['Agreeableness สูง','รักบ้าน','กล้าปกป้องคนที่รัก'],
+    desc:`คุณคือคนที่ซื่อสัตย์และรักครอบครัวอย่างแรงกล้า Agreeableness สูงทำให้คุณอ่อนโยน แต่เมื่อคนที่คุณรักถูกคุกคาม คุณกล้าเกินขนาด เหมือนปลาการ์ตูนตัวเล็กที่กล้าต่อสู้กับปลาใหญ่กว่าตัวเองหลายเท่า`,
+    bf:{O:55,C:72,E:58,A:90,N:32},rare:'พบบ่อย',power:'ความจงรักภักดี'
+  },
+  {
+    key:'shrimp',emoji:'🦐',name:'กุ้ง',loc:'แห่งศรีราชา',sub:'Shrimp of Si Racha',
+    traits:['Openness สูง','ความคิดสร้างสรรค์','ปรับตัวเร็ว'],
+    desc:`คุณคือคนที่ดูเล็กน้อยแต่ทรงพลังมาก Openness สูงทำให้คุณปรับตัวและเรียนรู้ได้เร็วในทุกสภาพแวดล้อม เหมือนกุ้งที่กระโดดได้สูงกว่าตัวเองหลายสิบเท่า`,
+    bf:{O:88,C:58,E:52,A:68,N:42},rare:'หายาก',power:'ความว่องไว'
+  },
+  {
+    key:'lionfish',emoji:'🐠',name:'ปลาสิงโต',loc:'แห่งอ่าวไทย',sub:'Lionfish of the Gulf of Thailand',
+    traits:['Openness สูงมาก','เป็นตัวของตัวเอง','ดูดีแต่ซับซ้อน'],
+    desc:`คุณคือคนที่มีเสน่ห์แต่เข้าหาได้ยาก Openness สูงมากทำให้คุณงดงามและซับซ้อน ส่วนเส้นขอบที่ชัดเจนของคุณทำให้คนรู้สึกทั้งประทับใจและระวัง เหมือนปลาสิงโตที่สวยงามที่สุดในทะเล แต่มีพิษที่ควรระวัง`,
+    bf:{O:92,C:60,E:35,A:48,N:45},rare:'หายากที่สุด',power:'เสน่ห์ลึกลับ'
+  },
 ];
 
-/* ══════════════════════════════════════
-   STATE
-══════════════════════════════════════ */
-let scores=[0,0,0,0,0,0],cur=-1,chosen=null,aiText='';
+/* ══ STATE ══ */
+let scores=new Array(ANIMALS.length).fill(0),cur=-1,chosen=null,aiText='';
+let streakCount=0, lastTrait='';
 
 function getAnimal(){
   let mx=-1,idx=0;
@@ -1435,9 +1580,34 @@ function getAnimal(){
   return ANIMALS[idx];
 }
 
-/* ══════════════════════════════════════
-   RENDER
-══════════════════════════════════════ */
+function getNearMiss(){
+  // Return top 3 animals excluding winner, with percentage
+  const winner = getAnimal();
+  const total = scores.reduce((a,b)=>a+b,0)||1;
+  return scores
+    .map((s,i)=>({animal:ANIMALS[i],pct:Math.round(s/total*100)}))
+    .filter(x=>x.animal.key!==winner.key && x.pct>0)
+    .sort((a,b)=>b.pct-a.pct)
+    .slice(0,3);
+}
+
+/* ══ FISH ANIMATION FOR INTRO ══ */
+const FISH_EMOJIS = ['🐬','🐠','🐟','🦑','🐡','🦐','🐙','🦈'];
+function spawnFish(container){
+  FISH_EMOJIS.forEach((em,i)=>{
+    const d=document.createElement('div');
+    d.className='swim-fish';
+    d.textContent=em;
+    const top=15+Math.random()*65;
+    const dur=12+Math.random()*14;
+    const delay=i*1.8+Math.random()*3;
+    const size=18+Math.random()*18;
+    d.style.cssText=`top:${top}%;font-size:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;left:-60px;`;
+    container.appendChild(d);
+  });
+}
+
+/* ══ RENDER ══ */
 function render(){
   const sc=document.getElementById('screen');
   sc.innerHTML='';
@@ -1448,68 +1618,64 @@ function render(){
 
 /* ── INTRO ── */
 function renderIntro(el){
+  const feats = T[LANG].feats;
+  const szName = LANG==='en' ? SZ.ne : SZ.n;
   el.innerHTML=`<div class="intro-scene">
-    <div class="intro-svgwrap">${SVG.scene_night}</div>
-    <div class="intro-vol">นิทานแห่งท้องทะเล · ${SZ.e} ${SZ.n} · ชลบุรี</div>
-    <h2 class="intro-hl">คุณคือ<br><em>สัตว์ทะเล</em><br>อะไร?</h2>
-    <p class="intro-kicker">ออกเดินทางผ่าน ${QUESTIONS.length} บทแห่งท้องทะเล<br>แล้วค้นพบตัวตนของคุณผ่าน <strong>Big Five Psychology</strong></p>
-    <div class="intro-features">
-      <div class="intro-feat">
-        <span class="if-icon">🧬</span>
-        <div class="if-title">Big Five Psychology</div>
-        <div class="if-desc">คำถามอิงงานวิจัยบุคลิกภาพมาตรฐานโลก</div>
-      </div>
-      <div class="intro-feat">
-        <span class="if-icon">📖</span>
-        <div class="if-title">Narrative Quiz</div>
-        <div class="if-desc">คุณอยู่ในนิทานทะเลจริงๆ ทุกคำตอบมีเรื่องราวต่อ</div>
-      </div>
-      <div class="intro-feat">
-        <span class="if-icon">${SZ.e}</span>
-        <div class="if-title">${SZ.n}</div>
-        <div class="if-desc">คำถามพิเศษตามฤดูกาลนี้</div>
-      </div>
-      <div class="intro-feat">
-        <span class="if-icon">🤖</span>
-        <div class="if-title">AI วิเคราะห์</div>
-        <div class="if-desc">Claude AI สร้างโปรไฟล์บุคลิกเฉพาะตัวคุณ</div>
-      </div>
+    <div class="intro-svgwrap" style="position:relative;">
+      ${SVG.scene_night}
+      <div class="fish-swim-layer" id="fishLayer"></div>
     </div>
-    <button class="btn-enter" onclick="startQuiz()">
-      เริ่มออกเดินทาง <span class="btn-enter-arr">→</span>
-    </button>
+    <div class="intro-vol">${LANG==='th'?'นิทานแห่งท้องทะเล':'Tales of the Sea'} · ${SZ.e} ${szName} · ${LANG==='th'?'ชลบุรี':'Chonburi'}</div>
+    <h2 class="intro-hl">${t('you_are')}<br><em>${t('sea_creature')}</em><br>${t('what')}</h2>
+    <p class="intro-kicker">${t('journey_thru')} ${QUESTIONS.length} ${t('chapters')}<br>${t('discover')} <strong>Big Five Psychology</strong></p>
+    <div class="intro-features">
+      ${feats.map(f=>`<div class="intro-feat"><span class="if-icon">${f.icon}</span><div class="if-title">${f.title}</div><div class="if-desc">${f.desc}</div></div>`).join('')}
+      <div class="intro-feat"><span class="if-icon">${SZ.e}</span><div class="if-title">${szName}</div><div class="if-desc">${LANG==='th'?'คำถามพิเศษตามฤดูกาลนี้':'Special seasonal questions for this time of year'}</div></div>
+    </div>
+    <p style="font-size:13px;font-style:italic;color:var(--slate);text-align:center;margin-bottom:16px;font-family:var(--f-body);">${t('animals_note')}</p>
+    <button class="btn-enter" onclick="startQuiz()">${t('startBtn')} <span class="btn-enter-arr">→</span></button>
   </div>`;
+  // spawn fish after paint
+  requestAnimationFrame(()=>{
+    const layer = document.getElementById('fishLayer');
+    if(layer) spawnFish(layer);
+  });
 }
-function startQuiz(){scores=[0,0,0,0,0,0];cur=0;chosen=null;aiText='';render();}
+function startQuiz(){scores=new Array(ANIMALS.length).fill(0);cur=0;chosen=null;aiText='';streakCount=0;lastTrait='';render();}
 
 /* ── QUESTION ── */
 function renderQ(el){
   const q=QUESTIONS[cur];
   const total=QUESTIONS.length;
   const letters=['ก','ข','ค','ง'];
+  const lore = LORE[q.scene];
 
-  // chapter dots
+  playSceneSound(q.scene);
+
   const dots=Array.from({length:total},(_,i)=>{
     const cls=i<cur?'ch-dot done':i===cur?'ch-dot active':'ch-dot';
     return `<div class="${cls}"></div>`;
   }).join('');
 
+  const loreHtml = lore ? `<div class="lore-box">
+    <div class="lore-eyebrow">${t('lore_label')} ✦</div>
+    <div class="lore-text">${LANG==='en'&&lore.en ? lore.en : lore.th}</div>
+  </div>` : '';
+
   el.innerHTML=`<div class="story-panel">
     <div class="chapter-progress">
-      <span class="ch-num">บทที่ ${cur+1}</span>
+      <span class="ch-num">${t('ch_label')} ${cur+1}</span>
       <div class="ch-dots">${dots}</div>
     </div>
     <div class="scene-card">
-      <div class="scene-illustration">
-        ${SVG[q.scene]||SVG.scene_beach}
-      </div>
+      <div class="scene-illustration">${SVG[q.scene]||SVG.scene_beach}</div>
       <div class="scene-body">
         <div class="scene-eyebrow">${q.eyebrow}</div>
         <div class="scene-text">${q.text}</div>
         <div class="response-text" id="responseBox"></div>
       </div>
       <div class="options-wrap">
-        <div class="options-label">คุณจะ…</div>
+        <div class="options-label" id="optLabel">${t('you_will')}</div>
         <div class="options">
           ${q.opts.map((o,i)=>`
             <button class="opt" id="opt${i}" onclick="selectOpt(${i})">
@@ -1520,64 +1686,85 @@ function renderQ(el){
               <span class="opt-check"></span>
             </button>`).join('')}
         </div>
+        <div class="change-hint" id="changeHint">${t('change_hint')}</div>
       </div>
     </div>
+    ${loreHtml}
     <button class="btn-next" id="btnNext" onclick="nextQ()">
-      ${cur===QUESTIONS.length-1?'ค้นพบตัวตนของคุณ':'บทต่อไป'}
+      ${cur===QUESTIONS.length-1?t('discover_self'):t('next_ch')}
       <span class="btn-next-arr">→</span>
     </button>
   </div>`;
 }
 
 function selectOpt(i){
-  if(chosen!==null)return; // prevent double-select
-  chosen=i;
   const q=QUESTIONS[cur];
+  if(chosen===i){
+    chosen=null;
+    document.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected','other-faded','changeable'));
+    const rbox=document.getElementById('responseBox');
+    if(rbox){rbox.classList.remove('show');rbox.textContent='';}
+    document.getElementById('btnNext').classList.remove('show');
+    document.getElementById('changeHint').classList.remove('show');
+    document.getElementById('optLabel').textContent=t('you_will');
+    return;
+  }
+  chosen=i;
   document.querySelectorAll('.opt').forEach((o,j)=>{
+    o.classList.remove('other-faded','changeable');
     o.classList.toggle('selected',j===i);
-    if(j!==i) o.classList.add('other-faded');
+    if(j!==i) o.classList.add('other-faded','changeable');
   });
-  // show response story
   const rbox=document.getElementById('responseBox');
   if(rbox&&q.responses&&q.responses[i]){
-    rbox.textContent=q.responses[i];
+    rbox.classList.remove('show');rbox.textContent=q.responses[i];
     setTimeout(()=>rbox.classList.add('show'),50);
   }
   document.getElementById('btnNext').classList.add('show');
+  document.getElementById('changeHint').classList.add('show');
+  document.getElementById('optLabel').textContent=t('selected_label');
+
+  // Streak detection
+  const trait = q.opts[i].r;
+  if(trait===lastTrait){ streakCount++; if(streakCount>=2) showStreak(trait); }
+  else { streakCount=1; lastTrait=trait; }
+}
+
+function showStreak(trait){
+  const existing=document.getElementById('streakBadge');
+  if(existing)existing.remove();
+  const d=document.createElement('div');
+  d.id='streakBadge';d.className='streak-badge';
+  d.textContent=LANG==='en'?`🔥 ${streakCount}x Streak — "${trait}"!`:`🔥 ${streakCount} ข้อติดกัน — "${trait}"!`;
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(),3500);
 }
 
 function nextQ(){
   if(chosen===null)return;
-  QUESTIONS[cur].opts[chosen].v.forEach((v,i)=>scores[i]+=v);
-  cur++;chosen=null;
-  render();
+  QUESTIONS[cur].opts[chosen].v.forEach((v,i)=>{ if(i<scores.length) scores[i]+=v; });
+  cur++;chosen=null;render();
 }
 
 /* ── LOADING ── */
-const STEPS=['กำลังดำดิ่งลงสู่ก้นทะเล…','AI กำลังอ่านบุคลิกจากเส้นทางของคุณ…','ค้นหาสัตว์ทะเลที่ตรงกับจิตใจคุณที่สุด…','เขียนโปรไฟล์บุคลิกเฉพาะตัวคุณ…'];
-
 function renderLoading(el){
   const a=getAnimal();
+  const steps=t('load_steps');
   el.innerHTML=`<div class="loading-scene">
     <div class="loading-svg-wrap">${SVG[a.key]||''}</div>
-    <div class="loading-headline">กำลังวิเคราะห์</div>
-    <div class="loading-sub">AI กำลังสร้างโปรไฟล์บุคลิกของคุณ</div>
+    <div class="loading-headline">${t('analyzing')}</div>
+    <div class="loading-sub">${t('ai_loading')}</div>
     <div class="load-bar"><div class="load-fill"></div></div>
-    <div class="load-step" id="lstep">${STEPS[0]}</div>
+    <div class="load-step" id="lstep">${steps[0]}</div>
   </div>`;
   let s=0;
-  const iv=setInterval(()=>{
-    s=(s+1)%STEPS.length;
-    const e=document.getElementById('lstep');
-    if(e)e.textContent=STEPS[s];
-  },1100);
+  const iv=setInterval(()=>{s=(s+1)%steps.length;const e=document.getElementById('lstep');if(e)e.textContent=steps[s];},1100);
   callAI().then(txt=>{
-    clearInterval(iv);
-    aiText=txt;
+    clearInterval(iv);aiText=txt;
     const an=getAnimal();
     const lbKey=`${an.emoji} ${an.name}·${an.loc.replace('แห่ง','')}`;
     LB[lbKey]=(LB[lbKey]||0)+1;
-    buildTicker();
+    saveLB();
     renderResult(document.getElementById('screen'));
   });
 }
@@ -1586,23 +1773,14 @@ function renderLoading(el){
 async function callAI(){
   const a=getAnimal();
   const bfDesc=`O:${a.bf.O} C:${a.bf.C} E:${a.bf.E} A:${a.bf.A} N(inverted):${100-a.bf.N}`;
+  const lang = LANG==='en' ? 'English' : 'Thai';
   try{
     const r=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+      method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        system:`คุณเป็นนักจิตวิทยาที่เชี่ยวชาญ Big Five Personality และทะเลไทย เขียนภาษาไทย อบอุ่น ลึกซึ้ง ไม่เกิน 65 คำ ห้ามขึ้นต้นด้วยชื่อสัตว์ ห้ามใช้ emoji ในเนื้อหา ตอบเฉพาะคำวิเคราะห์เท่านั้น`,
-        messages:[{role:'user',content:`Big Five Profile: ${bfDesc}
-สัตว์ทะเล: ${a.name}${a.loc}
-ฤดูกาล: ${SZ.n} ${SZ.e}
-
-เขียนคำวิเคราะห์บุคลิกที่:
-1. อ้างอิง Big Five อย่างน้อย 1 มิติแบบเฉพาะเจาะจง
-2. เชื่อมกับฤดูกาล
-3. จบด้วยประโยคให้กำลังใจที่ลึกและไม่คลิเช่
-ห้ามใช้สำนวนทั่วไปเช่น "จงเชื่อมั่นในตัวเอง"`}]
+        model:'claude-sonnet-4-20250514',max_tokens:1000,
+        system:`You are a psychologist specializing in Big Five Personality and Thai sea life. Write in ${lang}. Warm, deep tone. Max 65 words. Do NOT start with the animal name. No emoji in body. Reply ONLY with the analysis text.`,
+        messages:[{role:'user',content:`Big Five: ${bfDesc}\nAnimal: ${a.name}${a.loc}\nSeason: ${SZ.n} ${SZ.e}\n\nWrite a personality analysis that: 1) References at least 1 Big Five dimension specifically 2) Connects to the season 3) Ends with a non-cliché encouragement. No "believe in yourself" style phrases.`}]
       })
     });
     const d=await r.json();
@@ -1613,11 +1791,18 @@ async function callAI(){
 function fallback(a){
   const mp={
     'dolphin':`Extraversion สูงของคุณไม่ใช่แค่ความชอบพูด — มันคือพลังงานที่คนอื่นดูดซับได้โดยไม่รู้ตัว ใน${SZ.n}นี้ พลังนั้นแรงที่สุด ใช้มันสร้างสิ่งที่มีความหมายมากกว่าแค่ความสนุก`,
-    'shark':`Conscientiousness ที่สูงของคุณคือพรที่หายาก — คนส่วนใหญ่อยากมีแต่ไม่รู้วิธีสร้าง ใน${SZ.n}นี้ ลองใช้ความเด็ดขาดนั้นเพื่อสิ่งที่ใหญ่กว่าแค่ชัยชนะ`,
-    'squid':`Openness สูงของคุณคือของขวัญที่โลกต้องการ ใน${SZ.n}นี้ ความคิดสร้างสรรค์ของคุณอยู่ในจุดที่พร้อมที่สุด จงปล่อยให้มันไหลออกมาโดยไม่ตัดสิน`,
-    'turtle':`Neuroticism ต่ำของคุณคือสิ่งที่หาได้ยากในโลกที่วุ่นวาย — ความสงบที่แท้จริงไม่ใช่การไม่รู้สึก แต่คือการรู้สึกโดยไม่หวั่นไหว ใน${SZ.n}นี้ คุณคือสมอให้คนอื่น`,
-    'lobster':`Openness สูงในคนที่ Introvert สร้างความลึกที่หาได้ยาก ใน${SZ.n}นี้ บางที่ถึงเวลาให้คนที่สมควรได้เห็นความงามนั้นบ้างแล้ว`,
-    'whale':`Agreeableness สูงของคุณทำให้คุณเห็นมนุษยชาติได้ลึกกว่าคนอื่น ใน${SZ.n}นี้ จงจำไว้ว่าความเมตตาต้องเริ่มจากตัวเองด้วย ก่อนจะให้คนอื่น`,
+    'shark':`Conscientiousness ที่สูงของคุณคือพรที่หายาก ใน${SZ.n}นี้ ลองใช้ความเด็ดขาดนั้นเพื่อสิ่งที่ใหญ่กว่าแค่ชัยชนะ`,
+    'squid':`Openness สูงของคุณคือของขวัญที่โลกต้องการ ใน${SZ.n}นี้ ความคิดสร้างสรรค์ของคุณอยู่ในจุดที่พร้อมที่สุด`,
+    'turtle':`Neuroticism ต่ำของคุณคือสิ่งหาได้ยากในโลกที่วุ่นวาย ใน${SZ.n}นี้ คุณคือสมอให้คนอื่น`,
+    'lobster':`Openness สูงในคนที่ Introvert สร้างความลึกที่หาได้ยาก ใน${SZ.n}นี้ ถึงเวลาให้คนที่สมควรได้เห็นความงามนั้นบ้าง`,
+    'whale':`Agreeableness สูงของคุณทำให้คุณเห็นมนุษยชาติได้ลึกกว่าคนอื่น ใน${SZ.n}นี้ ความเมตตาต้องเริ่มจากตัวเองก่อน`,
+    'octopus':`Openness สูงมากทำให้คุณคิดได้หลายทางพร้อมกัน ใน${SZ.n}นี้ ลองเลือกเพียงหนึ่งทางแล้วลงมือ`,
+    'crab':`Conscientiousness สูงมากทำให้ทุกงานออกมาดีกว่าที่ใครคาด ใน${SZ.n}นี้ อย่าลืมหยุดดูความสำเร็จของตัวเองบ้าง`,
+    'pufferfish':`Neuroticism ต่ำมากทำให้คุณเป็นหินแกรนิตท่ามกลางคลื่น ใน${SZ.n}นี้ พลังที่ซ่อนอยู่รอวันโผล่ออกมา`,
+    'seal':`Agreeableness สูงทำให้ทุกพื้นที่ที่คุณอยู่ดีขึ้นทันที ใน${SZ.n}นี้ ความอ่อนโยนของคุณคือความแข็งแกร่งที่แท้จริง`,
+    'clownfish':`Agreeableness สูงรวมกับความกล้าที่ซ่อนอยู่สร้างพลังพิเศษที่หาได้ยาก ใน${SZ.n}นี้ สิ่งที่คุณปกป้องคือสิ่งที่ทำให้ชีวิตมีความหมาย`,
+    'shrimp':`Openness สูงมากทำให้คุณปรับตัวได้ในทุกสถานการณ์ ใน${SZ.n}นี้ ขนาดไม่ได้กำหนดผลกระทบ`,
+    'lionfish':`Openness สูงมากทำให้คุณงดงามในแบบที่เลียนแบบไม่ได้ ใน${SZ.n}นี้ เส้นขอบที่ชัดเจนคือรูปแบบของการเคารพตัวเอง`,
   };
   return mp[a.key]||`บุคลิกของคุณงดงามและซับซ้อนเหมือนท้องทะเลชลบุรีใน${SZ.n}นี้`;
 }
@@ -1626,97 +1811,177 @@ function fallback(a){
 function renderResult(el){
   const a=getAnimal();
   const bgKey=`result_bg_${a.key}`;
-  const today=new Date().toLocaleDateString('th-TH',{year:'numeric',month:'long',day:'numeric'});
+  const today=new Date().toLocaleDateString(LANG==='en'?'en-US':'th-TH',{year:'numeric',month:'long',day:'numeric'});
+  const nearMiss = getNearMiss();
+
+  const nearMissHtml = nearMiss.length ? `<div class="near-miss">
+    <div>
+      <div class="nm-label">${t('near_miss_lbl')}</div>
+      <div class="nm-list">
+        ${nearMiss.map(x=>`<span class="nm-item">${x.animal.emoji} ${x.animal.name} <strong>${x.pct}%</strong></span>`).join('')}
+      </div>
+    </div>
+  </div>` : '';
+
+  // Build share URL with result encoded
+  const shareUrl = buildShareUrl(a.key);
 
   el.innerHTML=`<div class="result-scene">
     <div class="result-hero">
       <div class="result-hero-svg">${SVG[bgKey]||''}</div>
       <div class="result-hero-overlay"></div>
       <div class="result-hero-text">
-        <div class="res-eyebrow">${today} · ${SZ.e} ${SZ.n}</div>
+        <div class="res-eyebrow">${today} · ${SZ.e} ${LANG==='en'?SZ.ne:SZ.n}</div>
         <div class="res-name">${a.name}<em>${a.loc}</em></div>
         <div class="res-en">${a.sub}</div>
       </div>
     </div>
-
-    <!-- animal illustration -->
-    <div style="width:200px;height:180px;margin:-20px auto 8px;position:relative;z-index:5;">
-      ${SVG[a.key]||''}
-    </div>
-
+    <div style="width:200px;height:180px;margin:-20px auto 8px;position:relative;z-index:5;">${SVG[a.key]||''}</div>
     <div class="result-body">
-      <div class="res-traits">
-        ${a.traits.map(t=>`<span class="res-trait">${t}</span>`).join('')}
-      </div>
-
+      <div class="res-traits">${a.traits.map(t2=>`<span class="res-trait">${t2}</span>`).join('')}</div>
       <div class="res-story">${a.desc}</div>
-
-      <!-- Big Five bars -->
+      ${nearMissHtml}
       <div class="bigfive-section">
-        <div class="bigfive-title">Big Five Profile</div>
+        <div class="bigfive-title">${t('big5')}</div>
         ${[
-          ['Openness','จินตนาการ',a.bf.O],
-          ['Conscientiousness','วินัย',a.bf.C],
-          ['Extraversion','สังคม',a.bf.E],
-          ['Agreeableness','เมตตา',a.bf.A],
-          ['Emotional Stability','ความสงบ',100-a.bf.N],
+          ['Openness','จินตนาการ / Imagination',a.bf.O],
+          ['Conscientiousness','วินัย / Discipline',a.bf.C],
+          ['Extraversion','สังคม / Social',a.bf.E],
+          ['Agreeableness','เมตตา / Empathy',a.bf.A],
+          ['Emotional Stability','ความสงบ / Stability',100-a.bf.N],
         ].map(([name,thai,val])=>`
           <div class="bf-row">
-            <span class="bf-label">${name}<br><span style="font-size:10px;opacity:.5">${thai}</span></span>
+            <span class="bf-label">${name}<br><span style="font-size:10px;opacity:.45">${thai}</span></span>
             <div class="bf-track"><div class="bf-fill" data-val="${val}"></div></div>
             <span class="bf-val">${val}</span>
           </div>`).join('')}
       </div>
-
-      <!-- AI insight -->
       <div class="ai-prose">
-        <div class="ai-prose-label">AI วิเคราะห์บุคลิก</div>
+        <div class="ai-prose-label">${t('ai_label')}</div>
         <div class="ai-prose-text">${aiText}</div>
       </div>
-
-      <!-- Stats -->
       <div class="res-stats">
-        <div class="rs-col">
-          <span class="rs-val">${a.pop.toLocaleString()}</span>
-          <span class="rs-lbl">คนในชลบุรี</span>
-        </div>
-        <div class="rs-col">
-          <span class="rs-val sm">${a.rare}</span>
-          <span class="rs-lbl">ระดับ</span>
-        </div>
-        <div class="rs-col">
-          <span class="rs-val sm">${a.power}</span>
-          <span class="rs-lbl">พลังพิเศษ</span>
-        </div>
+        <div class="rs-col"><span class="rs-val" id="playCountDisplay">—</span><span class="rs-lbl">${t('plays')}</span></div>
+        <div class="rs-col"><span class="rs-val sm">${a.rare}</span><span class="rs-lbl">${t('rare_lbl')}</span></div>
+        <div class="rs-col"><span class="rs-val sm">${a.power}</span><span class="rs-lbl">${t('power_lbl')}</span></div>
       </div>
 
-      <!-- Share -->
-      <div class="share-wrap">
-        <div class="share-hdl">แชร์ผลลัพธ์</div>
-        <button class="btn-save" onclick="saveCard()">📸 บันทึก Share Card · IG / TikTok</button>
-        <div class="share-grid">
-          <button class="btn-shr" onclick="shareNative()"><span class="btn-shr-ic">📱</span>แชร์</button>
-          <button class="btn-shr" onclick="shareFB()"><span class="btn-shr-ic">🔵</span>Facebook</button>
-          <button class="btn-shr" onclick="copyTxt()"><span class="btn-shr-ic">🔗</span>คัดลอก</button>
+      <!-- COMPARE WITH FRIEND -->
+      <div class="compare-wrap">
+        <div class="compare-title">${t('compare_title')}</div>
+        <div style="font-size:12px;color:var(--slate);font-family:var(--f-body);margin-bottom:10px;">${t('compare_mylink')}</div>
+        <div class="compare-link-box" onclick="copyCompareLink()" style="cursor:pointer;" title="คลิกเพื่อคัดลอก">${shareUrl}</div>
+        <div class="compare-input-row">
+          <input class="compare-input" id="friendLinkInput" placeholder="${t('compare_ph')}" type="text"/>
+          <button class="btn-compare" onclick="doCompare()">${t('compare_btn')}</button>
         </div>
-        <button class="btn-retry" onclick="retry()">↺ เล่นอีกครั้ง</button>
+        <div id="compareResult"></div>
+      </div>
+
+      <div class="share-wrap">
+        <div class="share-hdl">${t('share_hdl')}</div>
+        <button class="btn-save" onclick="saveCard()">${t('save_card')}</button>
+        <div class="share-grid">
+          <button class="btn-shr" onclick="shareIG()"><span class="btn-shr-ic">📷</span>${t('ig_story')}</button>
+          <button class="btn-shr" onclick="shareX()"><span class="btn-shr-ic">𝕏</span>${t('x_share')}</button>
+          <button class="btn-shr" onclick="shareFB()"><span class="btn-shr-ic">🔵</span>${t('fb')}</button>
+          <button class="btn-shr" onclick="copyTxt()"><span class="btn-shr-ic">🔗</span>${t('copy')}</button>
+        </div>
+        <button class="btn-retry" onclick="retry()">↺ ${LANG==='en'?'Play Again':'เล่นอีกครั้ง'}</button>
       </div>
     </div>
   </div>`;
 
-  // animate Big Five bars
+  loadPlayCount(a);
   requestAnimationFrame(()=>setTimeout(()=>{
-    document.querySelectorAll('.bf-fill').forEach(bar=>{
-      bar.style.width=bar.dataset.val+'%';
-    });
+    document.querySelectorAll('.bf-fill').forEach(bar=>{bar.style.width=bar.dataset.val+'%';});
   },300));
-
   scatter(a.emoji);
 }
 
-/* ══════════════════════════════════════
-   SHARE CARD CANVAS
-══════════════════════════════════════ */
+/* ══ COMPARE LOGIC ══ */
+function buildShareUrl(animalKey){
+  const base = location.href.split('?')[0];
+  return `${base}?result=${animalKey}`;
+}
+
+function copyCompareLink(){
+  const a=getAnimal();
+  navigator.clipboard.writeText(buildShareUrl(a.key)).then(()=>toast(LANG==='en'?'Link copied ✓':'คัดลอกลิงก์แล้ว ✓'));
+}
+
+async function doCompare(){
+  const input = document.getElementById('friendLinkInput');
+  const url = input ? input.value.trim() : '';
+  const resultDiv = document.getElementById('compareResult');
+  if(!resultDiv) return;
+
+  // Parse ?result= from URL
+  let friendKey = '';
+  try {
+    const u = new URL(url);
+    friendKey = u.searchParams.get('result')||'';
+  } catch(e){
+    // maybe they just pasted the key
+    friendKey = url.replace(/.*[?&]result=/,'').split('&')[0];
+  }
+
+  const friend = ANIMALS.find(a=>a.key===friendKey);
+  const me = getAnimal();
+
+  if(!friend){
+    resultDiv.innerHTML=`<div class="compare-result" style="color:var(--coral);">${LANG==='en'?'Could not read result link. Make sure your friend shares their exact result URL.':'อ่านลิงก์ไม่ได้ ให้เพื่อนส่งลิงก์จากหน้าผลลัพธ์โดยตรงครับ'}</div>`;
+    return;
+  }
+
+  resultDiv.innerHTML=`<div class="compare-result"><div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:var(--f-body);">${LANG==='en'?'MATCH RESULT':'ผลการจับคู่'}</div><div id="compareAIText" style="line-height:1.7;">⏳ ${LANG==='en'?'AI is comparing…':'AI กำลังเปรียบเทียบ…'}</div></div>`;
+
+  // Call AI for comparison
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',max_tokens:1000,
+        system:`You compare two people's personalities based on their sea creature results. Write in ${LANG==='en'?'English':'Thai'}. Warm, insightful tone. Max 80 words. Give their compatibility, what they have in common, and one thing each can learn from the other. No bullet points — flowing prose only.`,
+        messages:[{role:'user',content:`Person A: ${me.emoji} ${me.name} — ${me.traits.join(', ')} — Big Five: O${me.bf.O} C${me.bf.C} E${me.bf.E} A${me.bf.A} N${me.bf.N}\nPerson B: ${friend.emoji} ${friend.name} — ${friend.traits.join(', ')} — Big Five: O${friend.bf.O} C${friend.bf.C} E${friend.bf.E} A${friend.bf.A} N${friend.bf.N}`}]
+      })
+    });
+    const d=await r.json();
+    const txt = d.content?.[0]?.text||'';
+    const box = document.getElementById('compareAIText');
+    if(box) box.innerHTML=`<strong style="color:var(--amber)">${me.emoji} ${me.name} × ${friend.emoji} ${friend.name}</strong><br><br>${txt}`;
+  }catch(e){
+    const box=document.getElementById('compareAIText');
+    if(box) box.textContent=LANG==='en'?'Could not load AI comparison.':'โหลด AI ไม่ได้ลองใหม่อีกครั้ง';
+  }
+}
+
+// Check URL on load for compare link
+(()=>{
+  const params = new URLSearchParams(location.search);
+  const r = params.get('result');
+  if(r){ /* will be used when viewing shared link */ }
+})();
+
+async function loadPlayCount(a){
+  try {
+    const totalKey = 'seasoul_total_plays';
+    let total = 0;
+    try {
+      const res = await window.storage.get(totalKey, true);
+      if(res && res.value) total = parseInt(res.value)||0;
+    } catch(e){}
+    total += 1;
+    try { await window.storage.set(totalKey, String(total), true); } catch(e){}
+    const el = document.getElementById('playCountDisplay');
+    if(el) el.textContent = total.toLocaleString();
+  } catch(e){
+    const el = document.getElementById('playCountDisplay');
+    if(el) el.textContent = '—';
+  }
+}
+
+/* ══ SHARE CARD CANVAS ══ */
 async function saveCard(){
   const a=getAnimal();
   const cv=document.getElementById('cv');
@@ -1724,110 +1989,63 @@ async function saveCard(){
   const W=1080,H=1920;
   cv.width=W;cv.height=H;
 
-  // dark bg gradient
   const bg=ctx.createLinearGradient(0,0,0,H);
   bg.addColorStop(0,'#0c1118');bg.addColorStop(.5,'#111a26');bg.addColorStop(1,'#060c14');
   ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
 
-  // noise texture
-  for(let i=0;i<10000;i++){
-    ctx.fillStyle=`rgba(255,255,255,${Math.random()*.025})`;
-    ctx.fillRect(Math.random()*W,Math.random()*H,1,1);
-  }
+  for(let i=0;i<10000;i++){ctx.fillStyle=`rgba(255,255,255,${Math.random()*.025})`;ctx.fillRect(Math.random()*W,Math.random()*H,1,1);}
 
-  // top gold rule
   ctx.fillStyle='#c8a84b';ctx.fillRect(0,0,W,4);
-  ctx.fillStyle='rgba(200,168,75,.15)';ctx.fillRect(0,4,W,1);
-
-  // header
-  ctx.fillStyle='rgba(200,168,75,.6)';
-  ctx.font='300 34px serif';ctx.textAlign='center';ctx.letterSpacing='6px';
+  ctx.fillStyle='rgba(200,168,75,.6)';ctx.font='300 34px serif';ctx.textAlign='center';ctx.letterSpacing='6px';
   ctx.fillText('SEA SOUL · นิทานแห่งท้องทะเล · CHONBURI',W/2,80);
-
-  // thin rule
   ctx.strokeStyle='rgba(200,168,75,.2)';ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(80,105);ctx.lineTo(W-80,105);ctx.stroke();
 
-  // big emoji
-  ctx.font=`${300}px serif`;ctx.textAlign='center';
-  ctx.fillText(a.emoji,W/2,520);
+  ctx.font=`${300}px serif`;ctx.textAlign='center';ctx.fillText(a.emoji,W/2,520);
 
-  // glow under emoji
   const glow=ctx.createRadialGradient(W/2,540,0,W/2,540,280);
-  glow.addColorStop(0,`rgba(${a.key==='dolphin'?'91,143,168':a.key==='squid'?'168,120,200':a.key==='lobster'?'200,90,42':a.key==='whale'?'30,58,92':a.key==='turtle'?'74,122,72':'42,95,140'},0.2)`);
-  glow.addColorStop(1,'transparent');
+  glow.addColorStop(0,'rgba(91,143,168,0.2)');glow.addColorStop(1,'transparent');
   ctx.fillStyle=glow;ctx.fillRect(0,300,W,500);
 
-  // coral accent rule
   ctx.strokeStyle='#d4604a';ctx.lineWidth=3;
   ctx.beginPath();ctx.moveTo(W/2-40,590);ctx.lineTo(W/2+40,590);ctx.stroke();
 
-  // location
-  ctx.fillStyle='rgba(200,168,75,.8)';
-  ctx.font='italic 400 46px Georgia';ctx.textAlign='center';
+  ctx.fillStyle='rgba(200,168,75,.8)';ctx.font='italic 400 46px Georgia';ctx.textAlign='center';
   ctx.fillText(a.loc,W/2,650);
+  ctx.fillStyle='#f2ead8';ctx.font='bold 170px Georgia';ctx.fillText(a.name,W/2,840);
+  ctx.fillStyle='rgba(168,205,216,.45)';ctx.font='italic 400 44px Georgia';ctx.fillText(a.sub,W/2,910);
 
-  // name
-  ctx.fillStyle='#f2ead8';
-  ctx.font=`bold 170px Georgia`;
-  ctx.fillText(a.name,W/2,840);
-
-  // en name
-  ctx.fillStyle='rgba(168,205,216,.45)';
-  ctx.font='italic 400 44px Georgia';
-  ctx.fillText(a.sub,W/2,910);
-
-  // thin rule
   ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(120,945);ctx.lineTo(W-120,945);ctx.stroke();
-
-  // traits
-  ctx.fillStyle='rgba(200,168,75,.7)';
-  ctx.font='400 38px sans-serif';
+  ctx.fillStyle='rgba(200,168,75,.7)';ctx.font='400 38px sans-serif';
   ctx.fillText(a.traits.join('  ·  '),W/2,1000);
 
-  // Big Five bars (simple)
-  const bfData=[
-    ['Openness',a.bf.O],['Conscientiousness',a.bf.C],
-    ['Extraversion',a.bf.E],['Agreeableness',a.bf.A],['Stability',100-a.bf.N]
-  ];
+  const bfData=[['Openness',a.bf.O],['Conscientiousness',a.bf.C],['Extraversion',a.bf.E],['Agreeableness',a.bf.A],['Stability',100-a.bf.N]];
   let by=1070;
   ctx.font='400 32px sans-serif';
   bfData.forEach(([name,val])=>{
-    ctx.fillStyle='rgba(255,255,255,.35)';
-    ctx.fillText(name,200,by);
-    ctx.fillStyle='rgba(255,255,255,.1)';
-    ctx.fillRect(420,by-22,400,4);
+    ctx.fillStyle='rgba(255,255,255,.35)';ctx.fillText(name,200,by);
+    ctx.fillStyle='rgba(255,255,255,.1)';ctx.fillRect(420,by-22,400,4);
     const grad=ctx.createLinearGradient(420,0,820,0);
     grad.addColorStop(0,'#5b8fa8');grad.addColorStop(1,'#c8a84b');
-    ctx.fillStyle=grad;
-    ctx.fillRect(420,by-22,val*4,4);
-    ctx.fillStyle='rgba(200,168,75,.7)';
-    ctx.fillText(val,860,by);
-    by+=55;
+    ctx.fillStyle=grad;ctx.fillRect(420,by-22,val*4,4);
+    ctx.fillStyle='rgba(200,168,75,.7)';ctx.fillText(val,860,by);by+=55;
   });
 
-  // AI insight
   ctx.strokeStyle='rgba(200,168,75,.2)';ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(80,by+10);ctx.lineTo(W-80,by+10);ctx.stroke();
-  ctx.fillStyle='rgba(200,168,75,.08)';
-  ctx.fillRect(80,by+20,W-160,220);
-  ctx.fillStyle='rgba(168,205,216,.6)';
-  ctx.font='italic 400 38px Georgia';
+  ctx.fillStyle='rgba(200,168,75,.08)';ctx.fillRect(80,by+20,W-160,220);
+  ctx.fillStyle='rgba(168,205,216,.6)';ctx.font='italic 400 38px Georgia';
   wrapCanvas(ctx,'\u201C'+aiText+'\u201D',W/2,by+68,840,54);
 
-  // bottom
   ctx.strokeStyle='rgba(200,168,75,.2)';
   ctx.beginPath();ctx.moveTo(80,H-120);ctx.lineTo(W-80,H-120);ctx.stroke();
-  ctx.fillStyle='rgba(200,168,75,.4)';
-  ctx.font='300 30px sans-serif';ctx.letterSpacing='4px';
+  ctx.fillStyle='rgba(200,168,75,.4)';ctx.font='300 30px sans-serif';ctx.letterSpacing='4px';
   ctx.fillText('seasoul.chonburi.th · '+new Date().getFullYear(),W/2,H-70);
   ctx.fillStyle='#c8a84b';ctx.fillRect(0,H-4,W,4);
 
   const lnk=document.createElement('a');
-  lnk.download=`SeaSoul_${a.name}.png`;
-  lnk.href=cv.toDataURL('image/png');
-  lnk.click();
+  lnk.download=`SeaSoul_${a.name}.png`;lnk.href=cv.toDataURL('image/png');lnk.click();
   toast('บันทึก Share Card แล้ว 📸');
 }
 
@@ -1835,41 +2053,76 @@ function wrapCanvas(ctx,text,cx,y,maxW,lh){
   const chars=[...text];let line='';
   for(const ch of chars){
     const test=line+ch;
-    if(ctx.measureText(test).width>maxW&&line){
-      ctx.fillText(line,cx,y);line=ch;y+=lh;
-    }else line=test;
+    if(ctx.measureText(test).width>maxW&&line){ctx.fillText(line,cx,y);line=ch;y+=lh;}
+    else line=test;
   }
   if(line)ctx.fillText(line,cx,y);
 }
 
-/* ── SHARE ── */
-function shareNative(){
+/* ── SHARE FUNCTIONS ── */
+function getShareText(){
   const a=getAnimal();
-  const t=`ฉันคือ ${a.emoji}${a.name}${a.loc}!\n${a.traits.join(' · ')}\n\n${aiText}\n\n🌊 Sea Soul Quiz · นิทานแห่งท้องทะเลชลบุรี`;
-  if(navigator.share)navigator.share({title:'Sea Soul Quiz',text:t});
-  else copyTxt();
+  return `ฉันคือ ${a.emoji}${a.name}${a.loc}!\n${a.traits.join(' · ')}\n\n"${aiText}"\n\n🌊 Sea Soul Quiz · นิทานแห่งท้องทะเลชลบุรี\n${location.href}`;
 }
-function shareFB(){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank');}
+
+/* IG Story — save card first, then show instructions */
+function shareIG(){
+  const a=getAnimal();
+  showModal(
+    '📷 แชร์ลง IG Story',
+    `1. กด "บันทึก Share Card" เพื่อดาวน์โหลดรูป\n2. เปิด Instagram → Stories\n3. เลือกรูปที่บันทึก\n4. แชร์ได้เลย!`,
+    [
+      {label:'📸 บันทึก Share Card ก่อน', action:'saveCard();closeModal();'},
+      {label:'ปิด', action:'closeModal();', secondary:true}
+    ]
+  );
+}
+
+/* X (Twitter) share */
+function shareX(){
+  const a=getAnimal();
+  const text=`ฉันคือ ${a.emoji}${a.name}${a.loc}!\n${a.traits.join(' · ')}\n\n"${aiText}"\n\n🌊 Sea Soul Quiz ชลบุรี`;
+  const url=`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(location.href)}`;
+  window.open(url,'_blank','noopener');
+}
+
+function shareFB(){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','noopener');}
+
 function copyTxt(){
   const a=getAnimal();
-  navigator.clipboard.writeText(`ฉันคือ ${a.emoji}${a.name}${a.loc}!\n"${a.traits.join(' · ')}"\n\n${aiText}\n\n🌊 Sea Soul Quiz · ชลบุรี`)
-    .then(()=>toast('คัดลอกแล้ว ✓'));
+  navigator.clipboard.writeText(getShareText()).then(()=>toast('คัดลอกแล้ว ✓'));
 }
-function retry(){cur=-1;scores=[0,0,0,0,0,0];aiText='';render();}
+
+/* Modal helper */
+function showModal(title, sub, btns){
+  const existing=document.getElementById('modalOverlay');
+  if(existing) existing.remove();
+  const html=`<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-title">${title}</div>
+      <div class="modal-sub">${sub.replace(/\n/g,'<br>')}</div>
+      <div class="modal-btns">
+        ${btns.map(b=>`<button class="modal-btn ${b.secondary?'secondary':'primary'}" onclick="${b.action}">${b.label}</button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend',html);
+}
+function closeModal(){const m=document.getElementById('modalOverlay');if(m)m.remove();}
+
+function retry(){cur=-1;scores=new Array(ANIMALS.length).fill(0);aiText='';render();}
+
 function toast(m){
   const t=document.getElementById('toast');
   t.textContent=m;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2800);
 }
 
-/* ── SCATTER ── */
 function scatter(em){
   for(let i=0;i<8;i++) setTimeout(()=>{
-    const d=document.createElement('div');
-    d.textContent=em;
+    const d=document.createElement('div');d.textContent=em;
     d.style.cssText=`position:fixed;top:-50px;left:${10+Math.random()*80}%;font-size:${22+Math.random()*22}px;z-index:9998;pointer-events:none;animation:scatterFall ${1.3+Math.random()*1.5}s ease forwards;`;
-    document.body.appendChild(d);
-    setTimeout(()=>d.remove(),3000);
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3000);
   },i*100);
 }
 document.head.insertAdjacentHTML('beforeend',`<style>@keyframes scatterFall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(540deg);opacity:0;}}</style>`);
